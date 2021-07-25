@@ -1,23 +1,47 @@
 :root {
   --text-main: 'Roboto', sans-serif;
-  //
+  --text-bold: 500;
+  --text-normal: 400;
+  --border-radius: 5px;
+  --text-big-letters: uppercase;
+  --text-starts-from-big-letter: capitalize;
+  
+  --header-text-underline-color: #FF6B08;
+  --header-text-main-color: #FFFFFF;
+  --header-logo-svg-fill: #818181;
+  --header-text-logo-text-size: 30px;
+  --header-btn-background-color-active: #FF6B01;
+  --header-btn-background-color-not-active: transparent;
+  --header-text-size: 12px;
+  --header-border-color: #FFFFFF;
+  --header-search-svg-fill-and-underline-color: #FFFFFF;
+  --header-search-unsuccessful-color: #FF001B;
+  --header-search-text-size: 14px;
 
-  // --color-design-main: #d41443;
-  // --color-design-white: #ffffff;
-  // --color-design-black: #000000;
-  // --color-subtitle: #ffa5ba;
-  // --color-description: #907e82;
-  // --color-line-in-contacts: #e1e1e1;
+  --card-text-size: 12px;
+  --card-header-color: #000000;
+  --card-secondary-text-color: #FF6B08;
 
-  // --bg-section: #fff5f6;
-  // --bg-btn-dark: #d41443;
-  // --bg-btn-dark-hover: #c7133e;
-  // --bg-btn-light: #ffffff;
-  // --bg-btn-light-hover: #ecebeb;
-  // --bg-quote: #fafafa;
-  // --bg-social: #fea5bb;
-  // --bg-header-hero: #ffb8ca;
-  // --bg-mobile-menu: #e17992;
-  // --bg-beige-color: #f0d1a5;
-  // --bg-green-color: #c2e297;
+  --pagination-text-size: 12px;
+  --pagination-text-color: #000000;
+  --pagination-background-color: #F7F7F7;
+
+  --modal-outer-background-color: #000000;
+  --modal-outer-background-opacity: 0.25;
+  --modal-main-text-color: #000000;
+  --modal-header-text-size: 30px;
+  --modal-gategory-and-slash-color: #8C8C8C;
+  --modal-vote-background-color: #FF6B01;
+  --modal-vote-text-color: #FFFFFF;
+  --modal-votes-background-color: #F7F7F7;
+  --modal-text-size: 12px;
+  --modal-btn-watch-background-color: #FF6B01;
+  --modal-btn-queue-background-color: transparent;
+  --modal-btn-queue-border-color: #000000;
+  --modal-close-svg-color: #000000;
+
+  --footer-text-size: 16px;
+  --footer-text-color: #545454;
+  --footer-background-color: #F7F7F7;
+  --footer-svg-fill: #FF6B08;
 }
