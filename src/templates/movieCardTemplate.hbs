@@ -1,0 +1,36 @@
+<ul class="movi-list">
+    {{#each results}}
+    <li class="movi-item">
+        <div class="movi-item__img">
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="movie poster: {{title}}">
+        </div>
+        <div class="movi-stats">
+            {{#if title}}
+            <h2 class="movi-stats__title">
+                {{title}}
+            </h2>
+            {{else}}
+            <h2 class="movi-stats__title">
+                {{name}}
+            </h2>
+            {{/if}}
+            <div class="movi-stats__info">
+                <ul class="movi-genre">{{#each genre_ids}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                </ul>
+                <p class="movi-year">
+                    {{#if release_date}}
+                    <year class="getFullYear">{{release_date}}</year>
+                    {{else}}
+                    <year class="getFullYear">{{first_air_date}}</year>
+                    {{/if}}
+                </p>
+                <p class="movi-vote">
+                    {{vote_average}}
+                </p>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+</ul>
