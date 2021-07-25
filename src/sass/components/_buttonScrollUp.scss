@@ -8,15 +8,15 @@
   text-align: center;
   line-height: 30px;
   background: #f5f5f5;
-  color: #ff6b08;
+  color: var(--secondary-active-color);
   cursor: pointer;
   border-radius: 50%;
   display: none;
 }
 
 .buttonScrollUp:hover {
-  color: #ffffff;
-  background: #ff6b08;
+  color: var(--main-white-color);
+  background: var(--secondary-active-color);
 }
 
 .buttonScrollUp--show {
