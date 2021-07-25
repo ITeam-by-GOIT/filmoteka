@@ -1,0 +1,175 @@
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.modal-wrapper {
+  display: flex;
+  width: 882px;
+  height: 568px;
+  left: 71px;
+  top: 100px;
+  padding-top: 50px;
+  padding-bottom: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+
+  background: rgb(236, 193, 236);
+}
+
+.modal-right-part {
+  padding-left: 30px;
+}
+
+.img-modal {
+  width: 396px;
+  height: 477.8px;
+  left: 101px;
+  top: 150px;
+  border-radius: 5px;
+}
+
+.modal-main-title {
+  width: 266px;
+  height: 31px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 35px;
+  margin-bottom: 20px;
+
+  color: #000000;
+}
+
+.modal-secondary-title {
+  width: 39px;
+  height: 16px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.modal-film-description {
+  width: 396px;
+  height: 160px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #000000;
+}
+
+////// списки с информацией: рейтинг, просмотры итд... //////
+.modal-lists-wrapper {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.modal-list-denominations {
+  margin-right: 83px;
+}
+
+.modal-item-position {
+  height: 16px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #8c8c8c;
+}
+.modal-item-position:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.modal-list-denominations {
+  height: 16px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  color: #000000;
+}
+
+.modal-item-description:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.modal-item-description-rating {
+  line-height: 14px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 36px;
+  background: #ff6b01;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.modal-item-description-views {
+  line-height: 14px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 36px;
+  text-align: center;
+  background: #f7f7f7;
+  border-radius: 5px;
+  text-transform: uppercase;
+}
+.modal-item-span {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.item-flex {
+  display: flex;
+}
+
+//////btn////
+.modal-wrapper-btn {
+  margin-top: 21px;
+}
+
+.modal-btn {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 136px;
+  height: 44px;
+  border-radius: 5px;
+  padding-top: 14px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+}
+.modal-btn-watched {
+  background: #ff6b01;
+  margin-right: 15px;
+}
+
+.modal-btn-queue {
+  color: #000000;
+  background-color: #fff;
+}
