@@ -12,10 +12,10 @@
   margin-bottom: 8px;
 
   padding: 0;
-  border-color: transparent;
+  border-color: var(--background-transparent-color);
   border-radius: 50%;
 
-  background-color: white;
+  background-color: var(--main-white-color);
   transition: background-color 250ms linear;
 
   @media screen and (min-width: 768px) {
@@ -27,15 +27,15 @@
 
   &:hover,
   &:focus {
-    background-color: #ff6b01;
+    background-color: var(--main-active-color);
   }
 }
 .modal-close-btn__icon {
-  fill: black;
+  fill: var(--main-black-color);
   transition: fill 250ms linear;
 
   .modal-close-btn:hover &,
   .modal-close-btn:focus & {
-    fill: white;
+    fill: var(--main-white-color);
   }
 }
