@@ -1,23 +1,26 @@
 :root {
   --text-main: 'Roboto', sans-serif;
-  //
+  --text-bold: 500;
+  --text-normal: 400;
+  --border-radius: 5px;
+  --text-big-letters: uppercase;
+  --text-starts-from-big-letter: capitalize;
+  --main-text-size: 12px;
+  --logo-text-size-and-modal-header: 30px;
+  --secondary-active-color: #ff6b08;
+  --main-active-color: #ff6b01;
+  --main-white-color: #ffffff;
+  --background-transparent-color: transparent;
+  --main-black-color: #000000;
+  --for-pagination-footer-votes-background-color: #f7f7f7;
+  --search-and-footer-mobile-text-size: 14px;
 
-  // --color-design-main: #d41443;
-  // --color-design-white: #ffffff;
-  // --color-design-black: #000000;
-  // --color-subtitle: #ffa5ba;
-  // --color-description: #907e82;
-  // --color-line-in-contacts: #e1e1e1;
+  --header-logo-svg-fill: #818181;
+  --header-search-unsuccessful-color: #ff001b;
 
-  // --bg-section: #fff5f6;
-  // --bg-btn-dark: #d41443;
-  // --bg-btn-dark-hover: #c7133e;
-  // --bg-btn-light: #ffffff;
-  // --bg-btn-light-hover: #ecebeb;
-  // --bg-quote: #fafafa;
-  // --bg-social: #fea5bb;
-  // --bg-header-hero: #ffb8ca;
-  // --bg-mobile-menu: #e17992;
-  // --bg-beige-color: #f0d1a5;
-  // --bg-green-color: #c2e297;
+  --modal-backdrop-color: rgba(0, 0, 0, 0.25);
+  --modal-category-and-slash-color: #8c8c8c;
+
+  --footer-text-size-pc-tablet: 16px;
+  --footer-text-color: #545454;
 }
