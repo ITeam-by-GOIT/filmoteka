@@ -1,10 +1,11 @@
 .footer-container {
-  background-color: #f7f7f7;
+  background-color: var(--for-pagination-footer-votes-background-color);
   padding-top: 29px;
   padding-bottom: 30px;
   font-size: 14px;
+  font-weight: var(--text-normal);
   line-height: 16px;
-  color: #545454;
+  color: var(--footer-text-color);
 }
 .footer-content {
   display: flex;
@@ -17,6 +18,7 @@
   margin-right: 10px;
   height: 14px;
   width: 16px;
+  fill: var(--secondary-active-color);
 }
 .footer-rights-information {
   position: relative;
@@ -29,9 +31,15 @@
 }
 .link-footer {
   position: relative;
-  color: #545454;
+  color: var(--footer-text-color);
   margin-left: 5px;
 }
+.link-footer:hover,
+.link-footer:focus {
+  font-weight: var(--text-bold);
+  margin-left: 4px;
+}
+
 .footer-copyright,
 .footer-year {
   margin-right: 6px;
@@ -49,7 +57,8 @@
   height: 100%;
   width: 1px;
 
-  background-color: #545454;
+  background-color: var(--footer-text-color);
+  opacity: 0.4;
 }
 .footer-rights-text::before {
   content: '';
@@ -60,7 +69,8 @@
   height: 100%;
   width: 1px;
 
-  background-color: #545454;
+  background-color: var(--footer-text-color);
+  opacity: 0.4;
 }
 .link-footer::after {
   content: '';
@@ -71,7 +81,8 @@
   height: 1px;
   width: 100%;
 
-  background-color: #545454;
+  background-color: var(--footer-text-color);
+  opacity: 0.4;
 }
 
 @media screen and (min-width: 320px) {
