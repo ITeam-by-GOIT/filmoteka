@@ -4,5 +4,5 @@ document.body.onload = function () {
     if (!preloader.classList.contains('preloader-js')) {
       preloader.classList.add('preloader-js');
     }
-  }, 500);
+  }, 1000);
 };
