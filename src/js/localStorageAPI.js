@@ -1,5 +1,5 @@
-let watchedMovies = [];
-let queueMovies = [];
+let watchedMoviesList = [];
+let queueMoviesList = [];
 
 class localStorageAPI {
   constructor() {}
@@ -15,3 +15,5 @@ class localStorageAPI {
     localStorage.setItem(key, JSON.stringify(listArr));
   }
 }
+
+export { watchedMoviesList, queueMoviesList, localStorageAPI };
