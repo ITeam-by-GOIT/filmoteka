@@ -1,36 +1,35 @@
-<ul class="moviе-list">
-      {{#each results}}
-      <li class="moviе-item">
-            <div class="moviе-item__img">
-                  <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="moviе poster: {{title}}">
+{{#each this}}
+<li class="gallery-items">
+      <div class="moviе-item__img">
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="moviе poster: {{title}}">
+      </div>
+      <div class="moviе-stats">
+            {{#if title}}
+            <h2 class="moviе-stats__title">
+                  {{title}}
+            </h2>
+            {{else}}
+            <h2 class="moviе-stats__title">
+                  {{name}}
+            </h2>
+            {{/if}}
+            <div class="moviе-stats__info">
+                  <ul class="moviе-genre">
+                        {{#each genre_ids}}
+                        <li class="moviе-genre__item">{{this}}</li>
+                        {{/each}}
+                  </ul>
+                  <p class="moviе-year">
+                        {{#if release_date}}
+                        <year class="moviе-year__getFullYear">{{release_date}}</year>
+                        {{else}}
+                        <year class="moviе-year__getFullYear">{{first_air_date}}</year>
+                        {{/if}}
+                  </p>
+                  <p class="moviе-vote">
+                        {{vote_average}}
+                  </p>
             </div>
-            <div class="moviе-stats">
-                  {{#if title}}
-                  <h2 class="moviе-stats__title">
-                        {{title}}
-                  </h2>
-                  {{else}}
-                  <h2 class="moviе-stats__title">
-                        {{name}}
-                  </h2>
-                  {{/if}}
-                  <div class="moviе-stats__info">
-                        <ul class="moviе-genre">{{#each genre_ids}}
-                              <li>{{this}}</li>
-                              {{/each}}
-                        </ul>
-                        <p class="moviе-year">
-                              {{#if release_date}}
-                              <year class="moviе-year__getFullYear">{{release_date}}</year>
-                              {{else}}
-                              <year class="moviе-year__getFullYear">{{first_air_date}}</year>
-                              {{/if}}
-                        </p>
-                        <p class="moviе-vote">
-                              {{vote_average}}
-                        </p>
-                  </div>
-            </div>
-      </li>
-      {{/each}}
-</ul>
+      </div>
+</li>
+{{/each}}
