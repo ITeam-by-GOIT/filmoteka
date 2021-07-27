@@ -13,12 +13,22 @@ img {
   max-width: 100%;
   height: auto;
 }
+html {
+  height: 100%;
+}
 
 body {
+  height: 100%;
+
   font-style: normal;
   font-family: var(--text-main);
   color: var(--color-design-main);
   font-weight: var(--text-bold);
+}
+
+.wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
 }
 
 .list {
