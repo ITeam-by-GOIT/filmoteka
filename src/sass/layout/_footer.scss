@@ -1,4 +1,8 @@
 .footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--for-pagination-footer-votes-background-color);
   padding-top: 29px;
   padding-bottom: 30px;
