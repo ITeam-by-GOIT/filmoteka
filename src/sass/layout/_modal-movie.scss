@@ -248,7 +248,8 @@
   margin-right: 15px;
 }
 
-.modal-btn-watched:hover {
+.modal-btn-watched:hover,
+.modal-btn-watched:focus {
   color: var(--main-white-color);
   background-color: var(--main-active-color);
   border: none;
@@ -259,7 +260,8 @@
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
 }
-.modal-btn-queue:hover {
+.modal-btn-queue:hover,
+.modal-btn-queue:focus {
   color: var(--main-white-color);
   background-color: var(--main-active-color);
   border: none;
@@ -275,7 +277,8 @@
   border: none;
 }
 
-.modal-btn-hidden:hover {
+.modal-btn-hidden:hover,
+.modal-btn-hidden:focus {
   color: var(--main-black-color);
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
