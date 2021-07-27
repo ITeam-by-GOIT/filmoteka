@@ -17,6 +17,3 @@ export const refs = {
   modalBackdrop: document.querySelector('.backdrop-js'),
   modalCloseBtn: document.querySelector('.js-close-btn'),
 };
-
-console.log(refs.modalBackdrop);
-console.log(refs.modalCloseBtn);
