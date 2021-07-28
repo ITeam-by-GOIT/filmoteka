@@ -15,5 +15,6 @@ export const refs = {
   modalBtnRemoveQueue: document.querySelector('.js-modal-btn-remove-queue'),
   modalBackdrop: document.querySelector('.js-backdrop'),
   modalCloseBtn: document.querySelector('.js-close-btn'),
+  modal: document.querySelector('.js-modal'),
   searchForm: document.querySelector('.js-search-form'),
 };

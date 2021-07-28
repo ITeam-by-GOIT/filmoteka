@@ -1,18 +1,24 @@
-import modalToggle from './modalToggle';
+import modalAppearanceToggle from './modalAppearanceToggle';
+import { refs } from './refs.js';
 
-modalCloseBtn.addEventListener('click', e => {
-  modalToggle();
+refs.modalCloseBtn.addEventListener('click', modalCloseBtnClick);
+document.addEventListener('keypress', modalKeypressEsc);
+refs.modalBackdrop.addEventListener('click', modalBackdropClick);
+
+function modalCloseBtnClick(e) {
+  modalAppearanceToggle();
   modalCloseBtn.removeEventListener('click');
-});
+}
 
-document.addEventListener('keypress', e => {
+function modalKeypressEsc(e) {
   if (e.key === 27) {
     modalToggle();
     document.removeEventListener('keypress');
   }
-});
-
-backdrop.addEventListener('click', e => {
-  modalToggle();
+}
+function modalBackdropClick(e) {
+  modalAppearanceToggle();
   backdrop.removeEventListener('click');
-});
+}
+
+export { modalCloseBtnClick, modalKeypressEsc, modalBackdropClick };
