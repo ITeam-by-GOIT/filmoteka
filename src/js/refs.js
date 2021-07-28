@@ -17,4 +17,3 @@ export const refs = {
   modalCloseBtn: document.querySelector('.js-close-btn'),
   searchForm: document.querySelector('.js-search-form'),
 };
-console.log(refs.searchForm);
