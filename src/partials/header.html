@@ -1,7 +1,7 @@
 <header class="header header-container_home">
   <div class="container">
     <nav class="header-nav">
-      <a class="logo link" href="">
+      <a class="logo link js-logo" href="">
         <svg class="logo-icon">
           <use href="./images/sprite.svg#icon-film"></use>
         </svg>
@@ -10,17 +10,17 @@
 
       <ul class="navigation-menu-list list">
         <li class="navigation-list-link">
-          <a class="link navigation-menu-link current" id="home_page" href="">Home</a>
+          <a class="link navigation-menu-link current js-home_page" href="">Home</a>
         </li>
         <li class="navigation-list-link">
-          <a class="link navigation-menu-link" id="lib_page" href="">My library</a>
+          <a class="link navigation-menu-link js-lib_page" href="">My library</a>
         </li>
       </ul>
     </nav>
     <div class="search">
       <form class="search-form" id="search-form">
         <input
-          class="search-control"
+          class="search-control js-search-control"
           type="text"
           name="query"
           autocomplete="off"
@@ -37,8 +37,8 @@
       </form>
     </div>
     <div class="buttons visually-hidden">
-      <button class="button btn_watched active-btn" type="button">Watched</button>
-      <button class="button btn_queue" type="button">Queue</button>
+      <button class="button btn_watched active-btn js-btn_watched" type="button">Watched</button>
+      <button class="button btn_queue js-btn_queue" type="button">Queue</button>
     </div>
   </div>
 </header>
