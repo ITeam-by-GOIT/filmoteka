@@ -1,10 +1,10 @@
 .movie-gallery {
   padding-top: 20px;
-  padding-bottom: 40px;
+  padding-bottom: 140px; // +100px for footer
 
   @media screen and (min-width: 768px) {
     padding-top: 60px;
-    padding-bottom: 50px;
+    padding-bottom: 127px; // +77px for footer
   }
 }
 .gallery-list {
@@ -21,7 +21,6 @@
   flex-basis: calc(100% / 1 - 30px);
   margin-left: 30px;
   margin-bottom: 30px;
-  background-color: #fff;
 
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     flex-basis: calc(100% / 2 - 30px);
