@@ -22,9 +22,6 @@
   margin-left: 30px;
   margin-bottom: 30px;
 
-  height: 250px; // for test glued footer
-  background-color: rgb(109, 14, 14); // for test glued footer
-
   @media screen and (min-width: 768px) and (max-width: 1023px) {
     flex-basis: calc(100% / 2 - 30px);
     width: 294px;
