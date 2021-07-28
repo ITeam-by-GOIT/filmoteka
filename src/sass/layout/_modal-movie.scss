@@ -50,6 +50,13 @@
   }
 }
 
+@media screen and (max-width: 479px) {
+  .modal-right-part {
+    padding-left: 0px;
+    margin-top: 30px;
+  }
+}
+
 @media screen and (min-width: 480px) {
   .modal-right-part {
     padding-left: 30px;
@@ -77,7 +84,6 @@
 }
 
 .modal-main-title {
-  width: 266px;
   height: 21px;
   font-size: 20px;
   line-height: 1.15;

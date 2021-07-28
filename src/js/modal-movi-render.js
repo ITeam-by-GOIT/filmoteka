@@ -1,4 +1,4 @@
-import movieDetailsCard from '../templates/movieCardTemplate.hbs';
+import movieDetailsCard from '../templates/aboutMovieTemplates.hbs';
 import NewFetchApi from './fetchAPI';
 
 const newFetchApi = new NewFetchApi();
