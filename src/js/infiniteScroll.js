@@ -10,10 +10,8 @@ async function onScroll(fetch, render) {
   if (documentRect.bottom <= document.documentElement.clientHeight + 150) {
     pageCounter += 1;
 
-    let resultList = await fetch;
-    render(resultList);
-    // let resultList = await imageFetcher.fetchImages(searchQuery, pageCounter);
-    // renderGallery(resultList);
+    let resultList = await fetch; //запрос следующей страницы
+    render(resultList); // рендер результата нового запроса
   }
 }
 //--------------------------------------------------------
