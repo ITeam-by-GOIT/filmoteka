@@ -8,5 +8,7 @@ import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
+import './js/refs.js';
 
 document.querySelector('.js-search-form').addEventListener('submit', onSubmitHandler);
+
