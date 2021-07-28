@@ -2,23 +2,23 @@ import modalAppearanceToggle from './modalAppearanceToggle';
 import { refs } from './refs.js';
 
 refs.modalCloseBtn.addEventListener('click', modalCloseBtnClick);
-document.addEventListener('keypress', modalKeypressEsc);
+document.addEventListener('keydown', modalKeypressEsc);
 refs.modalBackdrop.addEventListener('click', modalBackdropClick);
 
 function modalCloseBtnClick(e) {
   modalAppearanceToggle();
-  modalCloseBtn.removeEventListener('click');
+  refs.modalCloseBtn.removeEventListener('click', modalCloseBtnClick);
 }
 
 function modalKeypressEsc(e) {
-  if (e.key === 27) {
-    modalToggle();
-    document.removeEventListener('keypress');
+  if (e.keyCode === 27) {
+    modalAppearanceToggle();
+    document.removeEventListener('keydown', modalKeypressEsc);
   }
 }
 function modalBackdropClick(e) {
   modalAppearanceToggle();
-  backdrop.removeEventListener('click');
+  refs.modalBackdrop.removeEventListener('click', modalBackdropClick);
 }
 
 export { modalCloseBtnClick, modalKeypressEsc, modalBackdropClick };
