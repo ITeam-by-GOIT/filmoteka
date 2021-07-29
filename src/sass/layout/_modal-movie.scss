@@ -1,85 +1,75 @@
-.overlay {
-  position: fixed;
-  background: rgba(0, 0, 0, 0.2);
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 .modal-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   flex-wrap: wrap;
-  height: 95%;
   width: 100%;
-  max-width: 280px;
-  max-height: 958px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 41px;
-  padding-top: 48px;
-  background-color: var(--main-white-color);
-  background-color: rgb(238, 162, 204);
-  overflow-y: scroll;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .modal-wrapper {
-    max-width: 562px;
-    max-height: 618px;
-    padding-left: 28px;
-    padding-right: 30px;
-    padding-bottom: 7px;
-    padding-top: 75px;
+    max-width: 618px;
+    padding-top: 35px;
     flex-wrap: nowrap;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .modal-wrapper {
     max-width: 882px;
-    max-height: 568px;
-    padding-top: 50px;
-    padding-bottom: 40px;
-    padding-right: 30px;
-    padding-left: 30px;
+    // max-height: 568px;
+    // padding-top: 50px;
+    // padding-bottom: 40px;
+    // padding-right: 30px;
+    // padding-left: 30px;
   }
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 767px) {
   .modal-right-part {
+    width: 100%;
     padding-left: 0px;
     margin-top: 30px;
   }
+  .wrapper-img {
+    height: 356px;
+    width: 100%;
+  }
+  .img-modal {
+    width: 100%;
+    height: inherit;
+  }
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .modal-right-part {
+    width: 265px;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .modal-right-part {
     padding-left: 30px;
   }
 }
 
-.img-modal {
-  width: 240px;
-  height: 356px;
-  left: 101px;
-  top: 150px;
+.wrapper-img {
   border-radius: var(--border-radius);
 }
-@media screen and (min-width: 480px) {
-  .img-modal {
+
+@media screen and (min-width: 768px) {
+  .wrapper-img {
     width: 264px;
     height: 373px;
   }
 }
-@media screen and (min-width: 768px) {
-  .img-modal {
+
+@media screen and (min-width: 1024px) {
+  .wrapper-img {
     width: 396px;
     height: 478px;
+  }
+  .img-modal {
+    width: inherit;
+    height: inherit;
   }
 }
 
@@ -90,7 +80,7 @@
   margin-bottom: 20px;
   color: var(--main-black-color);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .modal-main-title {
     height: 31px;
     font-size: 30px;
@@ -116,20 +106,20 @@
   color: var(--main-black-color);
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 768px) {
   .modal-film-description {
-    width: 262px;
+    width: 100%;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .modal-film-description {
-    height: 186px;
-    width: 396px;
+    width: 380px;
   }
 }
 
 ////// списки с информацией: рейтинг, просмотры итд... //////
 .modal-lists-wrapper {
+  width: 100%;
   display: flex;
   margin-bottom: 20px;
 }
@@ -146,19 +136,21 @@
 }
 
 .modal-list-denominations {
+  width: 50%;
   height: 16px;
   font-size: 12px;
   line-height: 1.33;
   color: var(--main-black-color);
   margin-right: 39px;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .modal-list-denominations {
     margin-right: 83px;
   }
 }
 
 .modal-item-description {
+  // width: 50%;
   height: 16px;
   font-size: 12px;
   line-height: 1.33;
@@ -232,16 +224,17 @@
   padding-left: 10px;
   padding-right: 10px;
   border: none;
+  cursor: pointer;
   text-transform: var(--text-big-letters);
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .modal-btn {
     width: 125px;
     padding-top: 14px;
     padding-bottom: 12px;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   .modal-btn {
     width: 136px;
   }
