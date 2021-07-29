@@ -25,6 +25,9 @@ body {
   color: var(--color-design-main);
   font-weight: var(--text-bold);
 }
+button {
+  cursor: pointer;
+}
 
 .wrapper {
   // box-sizing: border-box;
