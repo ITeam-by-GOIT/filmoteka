@@ -1,13 +1,15 @@
 import modalAppearanceToggle from './modalAppearanceToggle';
 import { refs } from './refs.js';
 
-refs.modalCloseBtn.addEventListener('click', modalCloseBtnClick);
+refs.modal.addEventListener('click', modalCloseBtnClick);
 document.addEventListener('keydown', modalKeypressEsc);
 refs.modalBackdrop.addEventListener('click', modalBackdropClick);
 
 function modalCloseBtnClick(e) {
-  modalAppearanceToggle();
-  refs.modalCloseBtn.removeEventListener('click', modalCloseBtnClick);
+  if (e.target === refs.modalCloseBtn) {
+    modalAppearanceToggle();
+    refs.modal.removeEventListener('click', modalCloseBtnClick);
+  }
 }
 
 function modalKeypressEsc(e) {
@@ -17,8 +19,10 @@ function modalKeypressEsc(e) {
   }
 }
 function modalBackdropClick(e) {
-  modalAppearanceToggle();
-  refs.modalBackdrop.removeEventListener('click', modalBackdropClick);
+  if (e.target !== refs.modal) {
+    modalAppearanceToggle();
+    refs.modalBackdrop.removeEventListener('click', modalBackdropClick);
+  }
 }
 
 export { modalCloseBtnClick, modalKeypressEsc, modalBackdropClick };
