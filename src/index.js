@@ -1,7 +1,5 @@
-import './js/headerMenu.js';
-
 import { refs } from './js/refs.js';
-
+import './js/headerMenu.js';
 import './js/spinner.js';
 import './sass/main.scss';
 import './js/fetchAPI.js';

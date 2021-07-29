@@ -1,16 +1,14 @@
 const { get } = require('lodash');
 
 /*=== Перемикання сторінок з використанням класів ===*/
-
 const refs = {
   header: document.querySelector('.header'),
   navigation: document.querySelector('.header-nav'),
   logo: document.querySelector('.logo'),
-  home: document.querySelector('.home-page'),
-  library: document.querySelector('.lib-page'),
+  home: document.querySelector('.js-home_page'),
+  library: document.querySelector('.js-lib_page'),
   search: document.querySelector('.search'),
   btn: document.querySelector('.buttons'),
-  warning: document.querySelector('.warning'),
 };
 
 // const Page = {
@@ -45,6 +43,7 @@ const refs = {
 // keepOfPage();
 
 /*==== 2 version ====*/
+
 const controlPageHome = function () {
   refs.library.classList.remove('current');
   refs.home.classList.add('current');
