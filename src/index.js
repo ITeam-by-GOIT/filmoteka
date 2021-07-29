@@ -10,5 +10,6 @@ import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
 import renderGallery from './js/renderGallery.js';
+import './js/onCardClick.js';
 
 refs.searchForm.addEventListener('submit', onSubmitHandler);
