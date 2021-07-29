@@ -14,8 +14,7 @@ import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.j
 refs.searchForm.addEventListener('submit', onSubmitHandler);
 
 
+localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
 
-
-
-
+console.log(getDataFromLocalStorage(localStorageAPI.KEYS.QUEUE))
 
