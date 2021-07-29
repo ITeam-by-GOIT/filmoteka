@@ -1,23 +1,4 @@
-import toastr from 'toastr';
-import 'toastr/build/toastr.css';
-
-toastr.options = {
-  closeButton: true,
-  debug: true,
-  newestOnTop: false,
-  progressBar: true,
-  positionClass: 'toast-top-center',
-  preventDuplicates: false,
-  onclick: null,
-  showDuration: '300',
-  hideDuration: '1000',
-  timeOut: '5000',
-  extendedTimeOut: '1000',
-  showEasing: 'swing',
-  hideEasing: 'linear',
-  showMethod: 'fadeIn',
-  hideMethod: 'fadeOut',
-};
+import { newToastr } from './toastrOptions.js';
 
 export default class FetchAPI {
   constructor() {
@@ -31,7 +12,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
-    toastr.error('Unsuccessful results. Try again!');
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -43,7 +24,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
-    toastr.error('Unsuccessful results. Try again!');
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -55,7 +36,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
-    toastr.error('Unsuccessful results. Try again!');
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -67,7 +48,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
-    toastr.error('Unsuccessful results. Try again!');
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 }
