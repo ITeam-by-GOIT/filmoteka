@@ -1,9 +1,10 @@
-export default function onWatchedHandler (key){
-    let array;
-    const data = localStorage.getItem(key)
-    if(data.length === 0) {
+import { localStorageAPI } from './localStorageAPI.js'
+export default function onWatchedHandler(key) {
+    const data = localStorageAPI.get(key);
+    if (data.length === 0) {
         return
     }
-    array = JSON.parse(data);
-    return array;
+
+    return data;
+
 }
