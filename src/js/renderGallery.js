@@ -1,15 +1,10 @@
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import Fetch from './fetchAPI';
+import { refs } from './refs';
 
-const cardsList = document.querySelector('.gallery-list-js');
-const homeBtn = document.querySelector('#home_page');
 const fetch = new Fetch();
 
 document.addEventListener('DOMContentLoaded', renderTrending);
-// homeBtn.addEventListener('click', renderHomePage);
-// function renderHomePage() {
-//   renderTrending();
-// }
 
 export default async function renderTrending() {
   try {
@@ -20,26 +15,36 @@ export default async function renderTrending() {
       return list.genres;
     });
     const result = await renederGalleryMarckUp(trends, genres);
-    cardsList.innerHTML = movieCardTemplate(result);
-    console.log(result);
+    const cardsGallery = movieCardTemplate(result);
+    refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
   } catch (e) {
     console.log('this is error:', e);
   }
 }
 function renederGalleryMarckUp(data, list) {
-  return data.map(obj => ({
-    ...obj,
-    popularity_rate: createPopularityRate(obj),
-    genres_short_list: createGenres(obj, list),
-  }));
+  return data.map(
+    obj => ({
+      ...obj,
+      popularity_rate: createPopularityRate(obj),
+      genres_short_list: createGenres(obj, list),
+      release_date: createCardYear(obj),
+    }),
+    // console.log(genres_short_list);
+  );
 }
 function createPopularityRate(obj) {
   return obj.popularity ? obj.popularity.toFixed(1) : '-';
 }
 function createGenres(obj, list) {
-  const genreList = obj.genre_ids;
-  const genreArray = list.filter(item => genreList.includes(item.id));
-  const genreArraySlise = genreArray.slice(0, 3);
-  const normalizedShortGenres = genreArraySlise.map(el => el.name).join(', ');
-  return normalizedShortGenres;
+  const movieCardGenresList = obj.genre_ids;
+  const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
+  const movieGenreArraySlise = movieCardGenresArray.slice(0, 3);
+
+  const createShortListGenres = movieGenreArraySlise.map(el => el.name).join(', ');
+
+  return createShortListGenres;
+}
+
+function createCardYear(obj) {
+  return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
