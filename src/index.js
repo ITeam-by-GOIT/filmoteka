@@ -1,3 +1,4 @@
+import { refs } from './js/refs.js';
 import './js/spinner.js';
 import './sass/main.scss';
 import './js/fetchAPI.js';
@@ -8,3 +9,6 @@ import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import './js/infiniteScroll.js';
+import onSubmitHandler from './js/eventListenerSearch.js';
+
+refs.searchForm.addEventListener('submit', onSubmitHandler);
