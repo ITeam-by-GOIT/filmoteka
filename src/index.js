@@ -9,6 +9,14 @@ import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
-
+import eventListenerButtons from './js/eventListenerGetDataFromLocalStorage.js'
+import {onWatchedHandler, onQueueHandler} from './js/eventListenerGetDataFromLocalStorage.js'
 
 refs.searchForm.addEventListener('submit', onSubmitHandler);
+
+
+
+
+
+
+
