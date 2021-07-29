@@ -15,9 +15,9 @@ class localStorageAPI {
     return JSON.parse(data)
   }
 
-  static set(movieObj, listArr, key) {
-    listArr.push(movieObj);
-    localStorage.setItem(key, JSON.stringify(listArr));
+  static set(movieObj, key) {
+    // listArr.push(movieObj);
+    localStorage.setItem(key, JSON.stringify(movieObj));
   }
 
   static delete(movieObj, listArr, key) {
