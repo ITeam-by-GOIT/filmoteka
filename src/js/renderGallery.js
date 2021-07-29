@@ -25,16 +25,14 @@ function renederGalleryMarckUp(data, list) {
   return data.map(
     obj => ({
       ...obj,
-      popularity_rate: createPopularityRate(obj),
+
       genres_short_list: createGenres(obj, list),
       release_date: createCardYear(obj),
     }),
     // console.log(genres_short_list);
   );
 }
-function createPopularityRate(obj) {
-  return obj.popularity ? obj.popularity.toFixed(1) : '-';
-}
+
 function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
