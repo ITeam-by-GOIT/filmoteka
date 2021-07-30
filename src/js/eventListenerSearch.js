@@ -17,8 +17,8 @@ export default async function onSubmitHandler(e) {
     });
     const result = await renederGalleryMarckUp(results, genres);
     refs.galleryList.innerHTML = '';
-    refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
-    return data;
+    return refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
+    
   } catch (e) {
     console.log(`Opps we got some error here...don't panic! we already did it for you :)`, e);
   }
