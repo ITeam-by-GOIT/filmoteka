@@ -10,5 +10,7 @@ import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
-
 refs.searchForm.addEventListener('submit', onSubmitHandler);
+import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js'
+import renderGallery from './js/renderGallery.js';
+import './js/onCardClick.js';
