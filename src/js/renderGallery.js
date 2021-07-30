@@ -21,16 +21,15 @@ export default async function renderTrending() {
     console.log('this is error:', e);
   }
 }
-function renederGalleryMarckUp(data, list) {
+export function renederGalleryMarckUp(data, list) {
   return data.map(obj => ({
     ...obj,
-
     genres_short_list: createGenres(obj, list),
     release_date: createCardYear(obj),
   }));
 }
 
-function createGenres(obj, list) {
+export function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
@@ -46,6 +45,6 @@ function createGenres(obj, list) {
   return movieGenreArraySlise.join(', ');
 }
 
-function createCardYear(obj) {
+export function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
