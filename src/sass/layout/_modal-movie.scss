@@ -204,9 +204,16 @@
 
 //////btn////
 .modal-wrapper-btn {
-  position: relative;
   margin-top: 21px;
   display: flex;
+}
+
+@media screen and (max-width: 767px) {
+  .modal-wrapper-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .modal-btn {
