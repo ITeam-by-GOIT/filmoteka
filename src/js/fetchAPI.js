@@ -8,7 +8,9 @@ export default class FetchAPI {
       `https://api.themoviedb.org/3/trending/movie/${timePeriod}?api_key=${this.API_KEY}&page=${page}`,
     );
     if (response.ok) {
-      return await response.json();
+      const data = await response.json()
+      console.log(data)
+      return await data;
     }
     throw new Error(await response.text());
   }

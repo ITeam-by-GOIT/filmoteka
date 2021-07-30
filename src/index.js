@@ -10,10 +10,11 @@ import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js'
-import renderGallery from './js/renderGallery.js';
+import { renderTrending, renederGalleryMarckUp, createGenres, createCardYear } from './js/renderGallery.js';
 import './js/onCardClick.js';
+import renderByInput from './js/renderByInput.js';
 
-refs.searchForm.addEventListener('submit', onSubmitHandler);
+renderByInput()
 
 
 // localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
