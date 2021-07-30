@@ -5,7 +5,6 @@ document.addEventListener('keydown', modalKeypressEsc);
 refs.modalBackdrop.addEventListener('click', closeOnClick);
 
 function closeOnClick(e) {
-  console.log(e);
   if (e.target.closest('.js-close-btn') || e.target === refs.modalBackdrop) {
     e.stopPropagation();
     modalAppearanceToggle();
