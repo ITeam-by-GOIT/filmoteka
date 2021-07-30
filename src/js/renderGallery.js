@@ -22,25 +22,28 @@ export default async function renderTrending() {
   }
 }
 function renederGalleryMarckUp(data, list) {
-  return data.map(
-    obj => ({
-      ...obj,
+  return data.map(obj => ({
+    ...obj,
 
-      genres_short_list: createGenres(obj, list),
-      release_date: createCardYear(obj),
-    }),
-    // console.log(genres_short_list);
-  );
+    genres_short_list: createGenres(obj, list),
+    release_date: createCardYear(obj),
+  }));
 }
 
 function createGenres(obj, list) {
   const movieCardGenresList = obj.genre_ids;
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
-  const movieGenreArraySlise = movieCardGenresArray.slice(0, 3);
+  const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
-  const createShortListGenres = movieGenreArraySlise.map(el => el.name).join(', ');
+  let movieGenreArraySlise = [];
+  if (mapedGenres.length < 3) {
+    movieGenreArraySlise = mapedGenres;
+  } else {
+    movieGenreArraySlise = mapedGenres.slice(0, 2);
+    movieGenreArraySlise.push('Other');
+  }
 
-  return createShortListGenres;
+  return movieGenreArraySlise.join(', ');
 }
 
 function createCardYear(obj) {
