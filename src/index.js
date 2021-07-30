@@ -1,4 +1,5 @@
 import { refs } from './js/refs.js';
+import './js/headerMenu.js';
 import './js/spinner.js';
 import './sass/main.scss';
 import './js/fetchAPI.js';
@@ -11,14 +12,6 @@ import onSubmitHandler from './js/eventListenerSearch.js';
 import modalAppearanceToggle from './js/modalAppearanceToggle.js';
 import './js/modalClose.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
-// ------------ for test notification (for example, with an invalid key)
-import FetchAPI from './js/fetchAPI.js';
-promise.then(data => console.log(data.results[0].release_date.slice(0, 4)));
 import renderGallery from './js/renderGallery.js';
+import './js/onCardClick.js';
 
-
-refs.searchForm.addEventListener('submit', onSubmitHandler);
-
-// localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
-
-// console.log(getDataFromLocalStorage(localStorageAPI.KEYS.QUEUE))
