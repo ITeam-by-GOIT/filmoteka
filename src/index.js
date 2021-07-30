@@ -12,9 +12,8 @@ import onSubmitHandler from './js/eventListenerSearch.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js'
 import { renderTrending, renederGalleryMarckUp, createGenres, createCardYear } from './js/renderGallery.js';
 import './js/onCardClick.js';
-import renderByInput from './js/renderByInput.js';
 
-renderByInput()
+refs.searchForm.addEventListener('submit', onSubmitHandler);
 
 
 // localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
