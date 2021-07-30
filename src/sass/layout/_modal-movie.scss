@@ -56,11 +56,8 @@
 @media screen and (min-width: 1024px) {
   .wrapper-img {
     width: 396px;
-    height: 478px;
-  }
-  .img-modal {
-    width: inherit;
-    height: inherit;
+    height: 476px;
+    overflow: hidden;
   }
 }
 
@@ -127,13 +124,19 @@
 }
 
 .modal-list-denominations {
-  width: 50%;
+  width: auto;
   height: 16px;
   font-size: 12px;
   line-height: 1.33;
   color: var(--main-black-color);
   margin-right: 39px;
 }
+@media screen and (max-width: 1023px) {
+  .modal-list-denominations {
+    width: 50%;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .modal-list-denominations {
     margin-right: 83px;
