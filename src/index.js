@@ -11,4 +11,12 @@ import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import './js/infiniteScroll.js';
 import onSubmitHandler from './js/eventListenerSearch.js';
 
+import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
+import renderGallery from './js/renderGallery.js';
+import './js/onCardClick.js';
+
 refs.searchForm.addEventListener('submit', onSubmitHandler);
+
+// localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
+
+// console.log(getDataFromLocalStorage(localStorageAPI.KEYS.QUEUE))
