@@ -10,12 +10,12 @@ import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
 import modalAppearanceToggle from './js/modalAppearanceToggle.js';
 import './js/modalClose.js';
+import './js/onCardClick.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
 // ------------ for test notification (for example, with an invalid key)
 import FetchAPI from './js/fetchAPI.js';
 promise.then(data => console.log(data.results[0].release_date.slice(0, 4)));
 import renderGallery from './js/renderGallery.js';
-
 
 refs.searchForm.addEventListener('submit', onSubmitHandler);
 
