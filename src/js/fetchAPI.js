@@ -9,7 +9,6 @@ export default class FetchAPI {
     );
     if (response.ok) {
       const data = await response.json()
-      console.log(data)
       return await data;
     }
     throw new Error(await response.text());
