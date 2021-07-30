@@ -10,6 +10,13 @@ import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
 import onSubmitHandler from './js/eventListenerSearch.js';
 import modalAppearanceToggle from './js/modalAppearanceToggle.js';
-import { modalCloseBtnClick, modalKeypressEsc, modalBackdropClick } from './js/modalClose.js';
+import './js/modalClose.js';
+import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
+import renderGallery from './js/renderGallery.js';
+import './js/onCardClick.js';
 
 refs.searchForm.addEventListener('submit', onSubmitHandler);
+
+// localStorageAPI.set([1, 2], localStorageAPI.KEYS.QUEUE)
+
+// console.log(getDataFromLocalStorage(localStorageAPI.KEYS.QUEUE))
