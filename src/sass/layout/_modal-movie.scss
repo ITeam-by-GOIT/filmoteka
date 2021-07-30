@@ -7,7 +7,6 @@
 @media screen and (min-width: 768px) {
   .modal-wrapper {
     max-width: 618px;
-    padding-top: 35px;
     flex-wrap: nowrap;
   }
 }
@@ -28,14 +27,6 @@
     width: 100%;
     padding-left: 0px;
     margin-top: 30px;
-  }
-  .wrapper-img {
-    height: 356px;
-    width: 100%;
-  }
-  .img-modal {
-    width: 100%;
-    height: inherit;
   }
 }
 
@@ -150,7 +141,6 @@
 }
 
 .modal-item-description {
-  // width: 50%;
   height: 16px;
   font-size: 12px;
   line-height: 1.33;
@@ -233,6 +223,7 @@
   border: none;
   cursor: pointer;
   text-transform: var(--text-big-letters);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) {
   .modal-btn {
@@ -252,6 +243,8 @@
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
   margin-right: 15px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-watched:hover,
@@ -265,6 +258,8 @@
   color: var(--main-black-color);
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn-queue:hover,
 .modal-btn-queue:focus {
@@ -281,6 +276,8 @@
   color: var(--main-white-color);
   background-color: var(--main-active-color);
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-btn-hidden:hover,
