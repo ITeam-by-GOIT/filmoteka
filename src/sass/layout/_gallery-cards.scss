@@ -30,4 +30,9 @@
     flex-basis: calc(100% / 3 - 30px);
     width: 274px;
   }
+
+  &:hover {
+    transform: scale(1.03);
+    cursor: zoom-in;
+  }
 }
