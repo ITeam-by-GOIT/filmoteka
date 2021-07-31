@@ -2,30 +2,49 @@ import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import FetchAPI from './fetchAPI';
 import { refs } from './refs';
 import { renederGalleryMarckUp, createGenres, createCardYear } from './renderGallery.js';
-import spinner from './spinner.js';
 const fetch = new FetchAPI();
+const footer = document.querySelector('.footer-container');
 let page = 1;
-const debounce = require('lodash.debounce');
+const spinner = refs.spinnerPreloader;
 // const anchor = refs.aboutTeam;
-const observer = new IntersectionObserver(debounce(onRender, 500), { threshold: 0 });
-observer.observe(refs.aboutTeam);
+
+const observer = new IntersectionObserver(onRender, { threshold: 0 });
+observer.observe(footer);
+
 async function onRender() {
-  page += 1;
+  spinner.classList.remove('preloader-js');
+  if (refs.galleryList.children.length !== 0) {
+    page += 1;
+    // spinner();
+    // console.log(spinner);
 
-  let resultList = await fetch.searchByTrending(undefined, page); //запрос следующей страницы
+    let resultList = await fetch.searchByTrending(undefined, page); //запрос следующей страницы
+    console.log(resultList);
 
-  render(resultList.results); // рендер результата нового запроса
+    if (page > resultList.total_pages) {
+      return;
+    } else {
+      render(resultList.results);
+    }
+  } else {
+    return;
+  }
 }
 
-async function render(resultList) {
+async function render(data) {
   try {
+    spinner.classList.add('preloader-js');
     const genres = await fetch.getGenres().then(list => {
       return list.genres;
     });
-    const result = await renederGalleryMarckUp(resultList, genres);
+    const result = await renederGalleryMarckUp(data, genres);
 
-    // refs.galleryList.innerHTML = '';
-    return refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
+    refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
+
+    const img = document.querySelectorAll('.js-card-img');
+    if (refs.galleryList.lastElementChild.complete) {
+      spinner.classList.remove('preloader-js');
+    }
   } catch (e) {
     console.log("Opps we got some error here...don't panic! we already did it for you :)", e);
   }
