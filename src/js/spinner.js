@@ -8,3 +8,9 @@ document.body.onload = function () {
     }
   }, 500);
 };
+// const preloader = refs.spinnerPreloader;
+// const preloaderSpinner = {
+//   addSpinner: preloader.classList.remove('preloader-js');
+//   removeSpinner: preloader.classList.add('preloader-js');
+
+// }

@@ -43,7 +43,7 @@ async function render(data) {
 
     const img = document.querySelectorAll('.js-card-img');
     if (refs.galleryList.lastElementChild.complete) {
-      spinner.classList.remove('preloader-js');
+      // spinner.classList.remove('preloader-js');
     }
   } catch (e) {
     console.log("Opps we got some error here...don't panic! we already did it for you :)", e);
