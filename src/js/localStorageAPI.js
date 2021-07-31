@@ -42,12 +42,10 @@ class localStorageAPI {
   static check(key, Obj) {
     if (!localStorageAPI.get(key)) return;
 
-    console.log(Obj);
-
     list = localStorageAPI.get(key);
     if (list.find(item => item.id === Obj.id)) return;
 
-    console.log(Obj);
+    console.log(list.length);
     return Obj;
   }
 }

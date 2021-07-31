@@ -10,7 +10,7 @@ function closeOnClick(e) {
     e.stopPropagation();
     modalAppearanceToggle();
   }
-  if (refs.modalBackdrop.classList.contains('is hidden')) {
+  if (refs.modalBackdrop.classList.contains('is-hidden')) {
     refs.modalBackdrop.removeEventListener('click', closeOnClick);
   }
 }
@@ -19,8 +19,9 @@ function modalKeypressEsc(e) {
   if (e.keyCode === 27) {
     refs.cardContainer.innerHTML = '';
     modalAppearanceToggle();
+    document.removeEventListener('keydown', modalKeypressEsc);
   }
-  if (refs.modalBackdrop.classList.contains('is hidden')) {
+  if (refs.modalBackdrop.classList.contains('is-hidden')) {
     document.removeEventListener('keydown', modalKeypressEsc);
   }
 }
