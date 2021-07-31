@@ -15,3 +15,10 @@ import './js/modalClose.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
+import './js/eventHandlerSearch.js';
+
+
+
+// const page = 2;
+// const one = localStorageAPI.getDataPerPage(localStorageAPI.KEYS.WATCHED, page);
+// console.log(one)
