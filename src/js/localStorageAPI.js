@@ -1,6 +1,4 @@
-let watchedMoviesList = [];
-let queueMoviesList = [];
-
+let list = new Array();
 class localStorageAPI {
   constructor() {}
   static get KEYS() {
@@ -15,16 +13,31 @@ class localStorageAPI {
     return JSON.parse(data);
   }
 
-  static set(movieObj, key) {
-    // listArr.push(movieObj);
-    localStorage.setItem(key, JSON.stringify(movieObj));
-  }
+  static set(key, Obj) {
+    if (!localStorageAPI.get(key)) {
+      list.push(Obj);
+      localStorage.setItem(key, JSON.stringify(list));
+      return;
+    }
 
-  static delete(movieObj, listArr, key) {
-    const movieIndex = listArr.indexOf(movieObj);
-    listArr.splice(movieIndex, 1);
-    localStorage.setItem(key, JSON.stringify(listArr));
+    list = localStorageAPI.get(key);
+    if (list.find(item => item.id === Obj.id) !== undefined) {
+      return;
+    }
+    list.push(Obj);
+    localStorage.setItem(key, JSON.stringify(list));
+  }
+  static delete(key, Obj) {
+    if (!localStorageAPI.get(key)) {
+      return;
+    }
+    let list = localStorageAPI.get(key);
+    const searchIndex = list.findIndex(item => item.id === Obj.id);
+    if (searchIndex !== -1) {
+      list.splice(searchIndex, 1);
+      localStorage.setItem(key, JSON.stringify(list));
+    }
   }
 }
 
-export { watchedMoviesList, queueMoviesList, localStorageAPI };
+export { localStorageAPI };
