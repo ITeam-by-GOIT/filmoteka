@@ -29,6 +29,6 @@ function onOpenModal(id) {
   refs.modalBackdrop.classList.remove('is-hidden');
 
   newsPictureApi.searchByMovieId(id).then(movie => {
-    refs.modalCloseBtn.insertAdjacentHTML('afterend', aboutMovieTemplates(movie));
+    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
   });
 }

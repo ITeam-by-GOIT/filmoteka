@@ -17,4 +17,5 @@ export const refs = {
   modalCloseBtn: document.querySelector('.js-close-btn'),
   modal: document.querySelector('.js-modal'),
   searchForm: document.querySelector('.js-search-form'),
+  cardContainer: document.querySelector('.card-container'),
 };
