@@ -2,17 +2,17 @@ let watchedMoviesList = [];
 let queueMoviesList = [];
 
 class localStorageAPI {
-  constructor() { }
+  constructor() {}
   static get KEYS() {
     return {
-      WATCHED: "watched",
-      QUEUE: "queue",
-      THEME: "theme",
-    }
+      WATCHED: 'watched',
+      QUEUE: 'queue',
+      THEME: 'theme',
+    };
   }
   static get(key) {
     const data = localStorage.getItem(key);
-    return JSON.parse(data)
+    return JSON.parse(data);
   }
 
   static set(movieObj, key) {

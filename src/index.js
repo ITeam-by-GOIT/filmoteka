@@ -14,4 +14,4 @@ import './js/modalClose.js';
 import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
-
+import './js/AddEventListenersForButtonsAddToWatchedQueue.js';

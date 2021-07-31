@@ -267,9 +267,7 @@
   border: none;
 }
 
-///btn hidden///
-
-.modal-btn-hidden {
+.modal-btn-remove {
   display: flex;
   align-items: center;
   color: var(--main-white-color);
@@ -277,8 +275,8 @@
   border: none;
 }
 
-.modal-btn-hidden:hover,
-.modal-btn-hidden:focus {
+.modal-btn-remove:hover,
+.modal-btn-remove:focus {
   color: var(--main-black-color);
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
