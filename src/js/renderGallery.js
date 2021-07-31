@@ -6,7 +6,7 @@ const fetch = new Fetch();
 
 document.addEventListener('DOMContentLoaded', renderTrending);
 
-export default async function renderTrending() {
+async function renderTrending() {
   try {
     const trends = await fetch.searchByTrending().then(data => {
       return data.results;
@@ -49,3 +49,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
+export { renderTrending, renederGalleryMarckUp, createGenres, createCardYear };

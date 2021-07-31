@@ -10,7 +10,8 @@ export default class FetchAPI {
       `https://api.themoviedb.org/3/trending/movie/${timePeriod}?api_key=${this.API_KEY}&page=${page}`,
     );
     if (response.ok) {
-      return await response.json();
+      const data = await response.json()
+      return await data;
     }
     newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
