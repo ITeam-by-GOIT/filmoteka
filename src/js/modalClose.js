@@ -5,8 +5,8 @@ document.addEventListener('keydown', modalKeypressEsc);
 refs.modalBackdrop.addEventListener('click', closeOnClick);
 
 function closeOnClick(e) {
-  refs.cardContainer.innerHTML = '';
   if (e.target.closest('.js-close-btn') || e.target === refs.modalBackdrop) {
+    refs.cardContainer.innerHTML = '';
     e.stopPropagation();
     modalAppearanceToggle();
   }
@@ -16,8 +16,8 @@ function closeOnClick(e) {
 }
 
 function modalKeypressEsc(e) {
-  refs.cardContainer.innerHTML = '';
   if (e.keyCode === 27) {
+    refs.cardContainer.innerHTML = '';
     modalAppearanceToggle();
   }
   if (refs.modalBackdrop.classList.contains('is hidden')) {

@@ -21,3 +21,8 @@ import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.j
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
 import './js/AddEventListenersForButtonsAddToWatchedQueue.js';
+
+// localStorageAPI.set(localStorageAPI.KEYS.WATCHED, { a: 50 });
+// localStorageAPI.set(localStorageAPI.KEYS.WATCHED, { b: 70 });
+
+// localStorageAPI.delete(localStorageAPI.KEYS.WATCHED, { b: 70 });
