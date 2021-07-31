@@ -38,6 +38,18 @@ class localStorageAPI {
       localStorage.setItem(key, JSON.stringify(list));
     }
   }
+
+  static check(key, Obj) {
+    if (!localStorageAPI.get(key)) return;
+
+    console.log(Obj);
+
+    list = localStorageAPI.get(key);
+    if (list.find(item => item.id === Obj.id)) return;
+
+    console.log(Obj);
+    return Obj;
+  }
 }
 
 export { localStorageAPI };

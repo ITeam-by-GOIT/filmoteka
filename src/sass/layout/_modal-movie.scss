@@ -250,8 +250,9 @@
 
 .modal-btn-watched:hover,
 .modal-btn-watched:focus {
-  color: var(--main-white-color);
-  background-color: var(--main-active-color);
+  // color: var(--main-white-color);
+  // background-color: var(--main-active-color);
+  background-color: rgb(194, 194, 194);
   border: none;
 }
 
@@ -262,8 +263,9 @@
 }
 .modal-btn-queue:hover,
 .modal-btn-queue:focus {
-  color: var(--main-white-color);
-  background-color: var(--main-active-color);
+  // color: var(--main-white-color);
+  // background-color: var(--main-active-color);
+  background-color: rgb(194, 194, 194);
   border: none;
 }
 

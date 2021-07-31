@@ -5,6 +5,7 @@ import {
   WatchedLocalStorage,
   QueueLocalStorage,
 } from './AddEventListenersForButtonsAddToWatchedQueue';
+import { localStorageAPI } from './localStorageAPI.js';
 
 const newsPictureApi = new Fetch();
 
@@ -23,8 +24,21 @@ function onOpenModal(id) {
   refs.modalBackdrop.classList.remove('is-hidden');
 
   newsPictureApi.searchByMovieId(id).then(movie => {
-    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
+    const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
+    const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
 
+    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
+    if (!w) {
+      document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
+      document.querySelector('.js-modal-btn-remove-watched').classList.toggle('visually-hidden');
+    }
+
+    if (!q) {
+      document.querySelector('.js-modal-btn-queue').classList.toggle('visually-hidden');
+      document.querySelector('.js-modal-btn-remove-queue').classList.toggle('visually-hidden');
+    }
+
+    // console.log(movie);
     WatchedLocalStorage(movie);
     QueueLocalStorage(movie);
   });
