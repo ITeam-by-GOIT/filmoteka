@@ -13,3 +13,10 @@ async function renderMovieDetails() {
 }
 
 renderMovieDetails();
+
+const div = document.querySelector('.overlay');
+const image = document.createElement('img');
+image.setAttribute('src', '../images/play.png');
+image.setAttribute('alt', 'play');
+div.innerHTML = image;
+//  class="modal-img-play" src = "../images/play.png" alt = "icon play" >
