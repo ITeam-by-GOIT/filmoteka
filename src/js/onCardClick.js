@@ -1,6 +1,12 @@
 import Fetch from './fetchAPI.js';
 import { refs } from './refs.js';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
+import {
+  onWatched,
+  onQueue,
+  addToLocalStorage,
+  removeToLocalStorage,
+} from './AddEventListenersForButtonsAddToWatchedQueue';
 
 const newsPictureApi = new Fetch();
 
@@ -13,6 +19,10 @@ function onCardClick(eve) {
   }
   const idMovie = isCardMovie.dataset.index;
   onOpenModal(idMovie);
+  refs.modalBackdrop.addEventListener('click', onWatched);
+  refs.modalBackdrop.addEventListener('click', onQueue);
+  addToLocalStorage(idMovie);
+  removeToLocalStorage(idMovie);
 }
 
 function onOpenModal(id) {

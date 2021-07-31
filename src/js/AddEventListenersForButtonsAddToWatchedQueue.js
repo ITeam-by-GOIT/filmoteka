@@ -1,10 +1,10 @@
 import { localStorageAPI } from './localStorageAPI.js';
 import { refs } from './refs.js';
 
-refs.modalBackdrop.addEventListener('click', onWatched);
-refs.modalBackdrop.addEventListener('click', onQueue);
+// refs.modalBackdrop.addEventListener('click', onWatched);
+// refs.modalBackdrop.addEventListener('click', onQueue);
 
-function onWatched(event) {
+export function onWatched(event) {
   if (event.target.closest('.js-modal-btn-watched')) {
     event.target.closest('.js-modal-btn-watched').classList.toggle('visually-hidden');
     event.target
@@ -19,7 +19,8 @@ function onWatched(event) {
       .previousElementSibling.classList.toggle('visually-hidden');
   }
 }
-function onQueue(event) {
+
+export function onQueue(event) {
   if (event.target.closest('.js-modal-btn-queue')) {
     event.target.closest('.js-modal-btn-queue').classList.toggle('visually-hidden');
     event.target
@@ -34,3 +35,6 @@ function onQueue(event) {
       .previousElementSibling.classList.toggle('visually-hidden');
   }
 }
+
+export function addToLocalStorage(id) {}
+export function removeToLocalStorage(id) {}
