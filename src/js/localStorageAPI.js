@@ -1,3 +1,4 @@
+let list = new Array();
 class localStorageAPI {
   constructor() {}
   static get KEYS() {
@@ -14,18 +15,18 @@ class localStorageAPI {
 
   static set(key, Obj) {
     if (!localStorageAPI.get(key)) {
-      localStorage.setItem(key, JSON.stringify(Obj));
+      list.push(Obj);
+      localStorage.setItem(key, JSON.stringify(list));
       return;
     }
-    let list = new Array();
-    list.push(localStorageAPI.get(key));
+
+    list = localStorageAPI.get(key);
     if (list.find(item => item.id === Obj.id) !== undefined) {
       return;
     }
     list.push(Obj);
     localStorage.setItem(key, JSON.stringify(list));
   }
-
   static delete(key, Obj) {
     if (!localStorageAPI.get(key)) {
       return;
