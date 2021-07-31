@@ -1,3 +1,5 @@
+import { newToastr } from './toastrOptions.js';
+
 export default class FetchAPI {
   constructor() {
     this.API_KEY = '05b27f765345223aac972c2dbb5eec37';
@@ -11,6 +13,7 @@ export default class FetchAPI {
       const data = await response.json()
       return await data;
     }
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -22,6 +25,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -33,6 +37,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 
@@ -44,7 +49,7 @@ export default class FetchAPI {
     if (response.ok) {
       return await response.json();
     }
+    newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
 }
-
