@@ -17,7 +17,8 @@ class localStorageAPI {
       localStorage.setItem(key, JSON.stringify(Obj));
       return;
     }
-    let list = localStorageAPI.get(key);
+    let list = new Array();
+    list.push(localStorageAPI.get(key));
     if (list.find(item => item.id === Obj.id) !== undefined) {
       return;
     }
