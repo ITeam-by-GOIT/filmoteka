@@ -14,14 +14,14 @@ async function renderTrending() {
     const genres = await fetch.getGenres().then(list => {
       return list.genres;
     });
-    const result = await renederGalleryMarckUp(trends, genres);
+    const result = await renderGalleryMarkup(trends, genres);
     const cardsGallery = movieCardTemplate(result);
     refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
   } catch (e) {
     console.log('this is error:', e);
   }
 }
-function renederGalleryMarckUp(data, list) {
+function renderGalleryMarkup(data, list) {
   return data.map(obj => ({
     ...obj,
 
@@ -49,4 +49,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renederGalleryMarckUp, createGenres, createCardYear };
+export { renderTrending, renderGalleryMarkup, createGenres, createCardYear };
