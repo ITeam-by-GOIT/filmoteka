@@ -39,21 +39,27 @@ class localStorageAPI {
     }
   }
 
+  static check(key, Obj) {
+    if (!localStorageAPI.get(key)) return false;
+
+    list = localStorageAPI.get(key);
+    if (list.find(item => item.id === Obj.id)) return true;
+
+    return false;
+  }
   static getDataPerPage(key, page = 1, perPage = 18) {
     const data = localStorageAPI.get(key);
     let forRender;
 
     if (page === 1) {
       forRender = data.slice(0, perPage);
-      // return forRender;
     }
     forRender = data.slice(0 + perPage * (page - 1), perPage * page);
-    // return forRender;
     if (!forRender || forRender.length === 0) {
       return
     }
-    console.log(forRender)
     return forRender;
+
 
   }
 }
