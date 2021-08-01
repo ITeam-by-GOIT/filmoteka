@@ -8,11 +8,17 @@ import './js/localStorageAPI.js';
 import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
+import './js/infiniteScroll.js';
 import onSubmitHandler from './js/eventListenerSearch.js';
-import { renderTrending, renederGalleryMarckUp, createGenres, createCardYear } from './js/renderGallery.js';
+import {
+  renderTrending,
+  renederGalleryMarckUp,
+  createGenres,
+  createCardYear,
+} from './js/renderGallery.js';
 import modalAppearanceToggle from './js/modalAppearanceToggle.js';
 import './js/modalClose.js';
-import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
 import './js/renderFromLocalStorage.js';
+import './js/eventHandlerSearch.js';
