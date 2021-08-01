@@ -4,8 +4,8 @@ import { refs } from './refs';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import { renederGalleryMarckUp } from './renderGallery';
 
-refs.watchedLibrary.addEventListener('click', renderMovieList(localStorageAPI.KEYS.WATCHED));
-refs.queueLibrary.addEventListener('click', renderMovieList(localStorageAPI.KEYS.QUEUE));
+refs.watchedLibrary.addEventListener('click', () => { renderMovieList(localStorageAPI.KEYS.WATCHED) });
+refs.queueLibrary.addEventListener('click', () => { renderMovieList(localStorageAPI.KEYS.QUEUE) });
 
 function renderMovieList(key) {
   const data = localStorageAPI.getDataPerPage(key);
@@ -18,6 +18,7 @@ function renderMovieList(key) {
     return item.genres;
   });
   const result = renederGalleryMarckUp(data, genres);
+  console.log(result)
   const cardsGallery = movieCardTemplate(result);
   refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
 }
