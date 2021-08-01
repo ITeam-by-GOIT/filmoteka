@@ -8,6 +8,7 @@ import './js/localStorageAPI.js';
 import './js/buttonScrollUp.js';
 import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
 import movieCardTemplate from './templates/movieCardTemplate.hbs';
+import './js/modal-movi-render.js';
 import './js/infiniteScroll.js';
 import onSubmitHandler from './js/eventListenerSearch.js';
 import {

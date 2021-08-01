@@ -1,4 +1,21 @@
-<div class="wrapper-img"><img class="img-modal" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="cover film"></div>
+<div class="modal-wrapper"> 
+    <a class="modal-wrapper-link" href="">
+<div class="wrapper-img">
+    <img class="img-modal" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="cover film">
+    <div class="overlay">
+
+        {{!-- <svg class="modal-img-play" fill="red" width="12" height="16">
+            <use width="12" height="16" href="./play-svg.svg"></use>
+        </svg> --}}
+        <img class="modal-img-play" src="./play-orange.png" alt="icon play">
+                {{!-- <img class="modal-img-play" src="./music-play.png" alt="icon play"> --}}
+
+        {{!-- <img class="modal-img-play" src="./play-border.png" alt="icon play"> --}}
+
+
+    </div>
+</div>
+</a>
 <div class="modal-right-part">
   <h2 class="modal-main-title">{{original_title}}</h2>
   <div class="modal-lists-wrapper">
@@ -34,4 +51,5 @@
        <button class="modal-btn modal-btn-queue js-modal-btn-queue" type="button">add to queue</button>
        <button class="visually-hidden modal-btn modal-btn-remove modal-btn-remove-queue js-modal-btn-remove-queue" type="button">remove from queue</button>
     </div>
+</div>
 </div>
