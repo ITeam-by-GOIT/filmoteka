@@ -249,8 +249,9 @@
 
 .modal-btn-watched:hover,
 .modal-btn-watched:focus {
-  color: var(--main-white-color);
-  background-color: var(--main-active-color);
+  // color: var(--main-white-color);
+  // background-color: var(--main-active-color);
+  background-color: rgb(194, 194, 194);
   border: none;
 }
 
@@ -263,14 +264,13 @@
 }
 .modal-btn-queue:hover,
 .modal-btn-queue:focus {
-  color: var(--main-white-color);
-  background-color: var(--main-active-color);
+  // color: var(--main-white-color);
+  // background-color: var(--main-active-color);
+  background-color: rgb(194, 194, 194);
   border: none;
 }
 
-///btn hidden///
-
-.modal-btn-hidden {
+.modal-btn-remove {
   display: flex;
   align-items: center;
   color: var(--main-white-color);
@@ -280,8 +280,8 @@
     color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-btn-hidden:hover,
-.modal-btn-hidden:focus {
+.modal-btn-remove:hover,
+.modal-btn-remove:focus {
   color: var(--main-black-color);
   background-color: var(--main-white-color);
   border: 1px solid var(--main-black-color);
