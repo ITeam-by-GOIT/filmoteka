@@ -12,13 +12,19 @@ import {
 const fetch = new FetchAPI();
 
 refs.watchedLibrary.addEventListener('click', () => {
-  renderMovieList(localStorageAPI.KEYS.WATCHED);
+  renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
 });
 refs.queueLibrary.addEventListener('click', () => {
-  renderMovieList(localStorageAPI.KEYS.QUEUE);
+  renderMovieList(localStorageAPI.KEYS.QUEUE, 1);
 });
-
-async function renderMovieList(key) {
+refs.linkMyLibrary.addEventListener('click', () => {
+  refs.galleryList.innerHTML = '';
+});
+async function renderMovieList(key, page) {
+  if (page === 1) {
+    refs.galleryList.innerHTML = ''
+      ;
+  }
   const data = localStorageAPI.getDataPerPage(key);
   if (!data || data.length === 0) {
     return;
@@ -31,5 +37,5 @@ async function renderMovieList(key) {
     const result = renederGalleryMarckUp(data, genres);
     const cardsGallery = movieCardTemplate(result);
     refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
-  } catch (e) {}
+  } catch (e) { }
 }
