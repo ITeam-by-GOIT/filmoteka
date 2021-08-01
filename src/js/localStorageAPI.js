@@ -1,8 +1,6 @@
-import dataCheck from './checkGetDataFromLocalStorage';
-
 let list = new Array();
 class localStorageAPI {
-  constructor() {}
+  constructor() { }
   static get KEYS() {
     return {
       WATCHED: 'watched',
@@ -42,20 +40,17 @@ class localStorageAPI {
   }
 
   static getDataPerPage(key, page = 1, perPage = 18) {
-    if (dataCheck(key) === 1) {
-      return 'not enough films in your own base!';
-    }
     const data = localStorageAPI.get(key);
     let forRender;
 
     if (page === 1) {
       forRender = data.slice(0, perPage);
       // return forRender;
-    } 
-      forRender = data.slice(0 + perPage * (page - 1), perPage * page);
-      // return forRender;
+    }
+    forRender = data.slice(0 + perPage * (page - 1), perPage * page);
+    // return forRender;
     if (!forRender || forRender.length === 0) {
-      return 'not enough films! Add some.';
+      return
     }
     console.log(forRender)
     return forRender;
