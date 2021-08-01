@@ -63,5 +63,4 @@ class localStorageAPI {
 
   }
 }
-
 export { localStorageAPI };
