@@ -35,15 +35,15 @@ function createGenres(obj, list) {
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
-  let movieGenreArraySlise = [];
+  let movieGenreArraySlice = [];
   if (mapedGenres.length < 3) {
-    movieGenreArraySlise = mapedGenres;
+    movieGenreArraySlice = mapedGenres;
   } else {
-    movieGenreArraySlise = mapedGenres.slice(0, 2);
-    movieGenreArraySlise.push('Other');
+    movieGenreArraySlice = mapedGenres.slice(0, 2);
+    movieGenreArraySlice.push('Other');
   }
 
-  return movieGenreArraySlise.join(', ');
+  return movieGenreArraySlice.join(', ');
 }
 
 function createCardYear(obj) {
