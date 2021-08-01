@@ -1,4 +1,4 @@
-import fetch from './fetchAPI';
+import FetchAPI from './fetchAPI';
 import { localStorageAPI } from './localStorageAPI';
 import { refs } from './refs';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
@@ -8,6 +8,8 @@ import {
   createGenres,
   createCardYear,
 } from './renderGallery';
+
+const fetch = new FetchAPI();
 
 refs.watchedLibrary.addEventListener('click', () => {
   renderMovieList(localStorageAPI.KEYS.WATCHED);
