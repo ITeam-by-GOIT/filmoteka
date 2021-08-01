@@ -18,6 +18,3 @@ export const spinnerMethod = {
     preloader.classList.remove('preloader-js');
   },
 };
-
-// console.log(spinner.removePreloader);
-// console.log(spinner.addPreloader);
