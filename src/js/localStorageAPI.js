@@ -40,13 +40,12 @@ class localStorageAPI {
   }
 
   static check(key, Obj) {
-    if (!localStorageAPI.get(key)) return;
+    if (!localStorageAPI.get(key)) return false;
 
     list = localStorageAPI.get(key);
-    if (list.find(item => item.id === Obj.id)) return;
+    if (list.find(item => item.id === Obj.id)) return true;
 
-    console.log(list.length);
-    return Obj;
+    return false;
   }
 }
 
