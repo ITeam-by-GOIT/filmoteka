@@ -2,11 +2,6 @@ import { refs } from './refs.js';
 
 // /*=== Перемикання сторінок з використанням класів ===*/
 
-const header = document.querySelector('.header');
-const btn = document.querySelector('.buttons');
-const navigation = document.querySelector('.header-nav');
-//const search = document.querySelector('.search');
-
 const controlPageHome = function () {
   refs.linkMyLibrary.classList.remove('current');
   refs.linkHome.classList.add('current');
@@ -26,7 +21,7 @@ const controlPageLib = function () {
 refs.linkMyLibrary.addEventListener('click', controlPageLib);
 refs.linkHome.addEventListener('click', controlPageHome);
 
-navigation.addEventListener('click', evt => {
+refs.headerNavigation.addEventListener('click', evt => {
   evt.preventDefault();
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();

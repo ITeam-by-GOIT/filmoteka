@@ -2,7 +2,7 @@ import Fetch from './fetchAPI.js';
 import { refs } from './refs.js';
 import { newToastr } from './toastrOptions.js';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
-import { renederGalleryMarckUp, createGenres, createCardYear } from './renderGallery.js';
+import { renederGalleryMarckUp } from './renderGallery.js';
 
 export default async function onSubmitHandler(e) {
   e.preventDefault();
