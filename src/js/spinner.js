@@ -1,10 +1,23 @@
 import { refs } from './refs.js';
 
-document.body.onload = function () {
-  setTimeout(function () {
-    const preloader = refs.spinnerPreloader;
+const preloader = refs.spinnerPreloader;
+
+document.body.onload = () => {
+  setTimeout(() => {
     if (!preloader.classList.contains('preloader-js')) {
       preloader.classList.add('preloader-js');
     }
-  }, 1000);
+  }, 500);
 };
+
+export const spinnerMethod = {
+  removeSpinner: function () {
+    setTimeout(preloader.classList.add('preloader-js'), 500);
+  },
+  addSpinner: function () {
+    preloader.classList.remove('preloader-js');
+  },
+};
+
+// console.log(spinner.removePreloader);
+// console.log(spinner.addPreloader);
