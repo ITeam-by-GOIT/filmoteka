@@ -20,6 +20,5 @@ export default async function onSubmitHandler(e) {
     return refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
   } catch (e) {
     newToastr.error('Unsuccessful results. Try again!');
-    console.log(`Oops we got some error here...don't panic! we already did it for you :)`, e);
   }
 }
