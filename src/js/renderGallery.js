@@ -22,11 +22,12 @@ async function renderTrending() {
   }
 }
 function renederGalleryMarckUp(data, list) {
-  if (data[0].genres) {
+  if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
       Object.assign(item, { genre_ids: id });
       delete item.genres;
+      return item;
     });
     return newData.map(obj => ({
       ...obj,

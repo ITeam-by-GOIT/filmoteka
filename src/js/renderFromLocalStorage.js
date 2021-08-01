@@ -30,7 +30,6 @@ async function renderMovieList(key) {
     });
     const result = renederGalleryMarckUp(data, genres);
     const cardsGallery = movieCardTemplate(result);
-    console.log(cardsGallery);
     refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
   } catch (e) {}
 }
