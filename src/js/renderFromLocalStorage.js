@@ -4,7 +4,7 @@ import { refs } from './refs';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import {
   renderTrending,
-  renederGalleryMarckUp,
+  renderGalleryMarkup,
   createGenres,
   createCardYear,
 } from './renderGallery';
@@ -34,7 +34,7 @@ async function renderMovieList(key, page) {
     const genres = await fetch.getGenres().then(list => {
       return list.genres;
     });
-    const result = renederGalleryMarckUp(data, genres);
+    const result = renderGalleryMarkup(data, genres);
     const cardsGallery = movieCardTemplate(result);
     refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
   } catch (e) { }

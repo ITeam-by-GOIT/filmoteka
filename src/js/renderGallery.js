@@ -21,7 +21,7 @@ async function renderTrending() {
     console.log('this is error:', e);
   }
 }
-function renederGalleryMarckUp(data, list) {
+function renderGalleryMarkup(data, list) {
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
