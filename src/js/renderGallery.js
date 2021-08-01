@@ -22,6 +22,10 @@ async function renderTrending() {
   }
 }
 function renederGalleryMarckUp(data, list) {
+  if (data[0].genres) {
+
+    return;
+  }
   return data.map(obj => ({
     ...obj,
 
