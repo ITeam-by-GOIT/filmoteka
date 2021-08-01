@@ -21,4 +21,5 @@ import modalAppearanceToggle from './js/modalAppearanceToggle.js';
 import './js/modalClose.js';
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
+import './js/renderFromLocalStorage.js';
 import './js/eventHandlerSearch.js';

@@ -27,7 +27,6 @@ function onOpenModal(id) {
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
 
-    console.log(w);
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
