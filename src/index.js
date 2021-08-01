@@ -12,7 +12,7 @@ import onSubmitHandler from './js/eventListenerSearch.js';
 import { renderTrending, renederGalleryMarckUp, createGenres, createCardYear } from './js/renderGallery.js';
 import modalAppearanceToggle from './js/modalAppearanceToggle.js';
 import './js/modalClose.js';
-import getDataFromLocalStorage from './js/eventListenerGetDataFromLocalStorage.js';
+import getDataFromLocalStorage from './js/checkGetDataFromLocalStorage.js';
 import renderGallery from './js/renderGallery.js';
 import './js/onCardClick.js';
 import './js/eventHandlerSearch.js';

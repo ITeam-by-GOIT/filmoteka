@@ -1,4 +1,4 @@
-import dataCheck from './eventListenerGetDataFromLocalStorage';
+import dataCheck from './checkGetDataFromLocalStorage';
 
 let list = new Array();
 class localStorageAPI {
@@ -41,13 +41,12 @@ class localStorageAPI {
     }
   }
 
-  static getDataPerPage(key, page, perPage = 18) {
+  static getDataPerPage(key, page = 1, perPage = 18) {
     if (dataCheck(key) === 1) {
       return 'not enough films in your own base!';
     }
     const data = localStorageAPI.get(key);
     let forRender;
-    // if(!data || data.length === 0);
 
     if (page === 1) {
       forRender = data.slice(0, perPage);
@@ -57,7 +56,9 @@ class localStorageAPI {
       // return forRender;
     if (!forRender || forRender.length === 0) {
       return 'not enough films! Add some.';
-    } return forRender; 
+    }
+    console.log(forRender)
+    return forRender;
 
   }
 }
