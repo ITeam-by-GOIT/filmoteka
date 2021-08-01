@@ -228,8 +228,8 @@
 @media screen and (min-width: 768px) {
   .modal-btn {
     width: 125px;
-    padding-top: 14px;
-    padding-bottom: 12px;
+    //   padding-top: 14px;
+    //   padding-bottom: 12px;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -249,9 +249,9 @@
 
 .modal-btn-watched:hover,
 .modal-btn-watched:focus {
-  // color: var(--main-white-color);
-  // background-color: var(--main-active-color);
-  background-color: rgb(194, 194, 194);
+  color: var(--main-white-color);
+  background-color: var(--main-active-color);
+  // background-color: rgb(194, 194, 194);
   border: none;
 }
 
@@ -264,9 +264,9 @@
 }
 .modal-btn-queue:hover,
 .modal-btn-queue:focus {
-  // color: var(--main-white-color);
-  // background-color: var(--main-active-color);
-  background-color: rgb(194, 194, 194);
+  color: var(--main-white-color);
+  background-color: var(--main-active-color);
+  // background-color: rgb(194, 194, 194);
   border: none;
 }
 
