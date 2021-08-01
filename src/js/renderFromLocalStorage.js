@@ -1,24 +1,34 @@
-import { from } from 'form-data';
+import fetch from './fetchAPI';
 import { localStorageAPI } from './localStorageAPI';
 import { refs } from './refs';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
-import { renederGalleryMarckUp } from './renderGallery';
+import {
+  renderTrending,
+  renederGalleryMarckUp,
+  createGenres,
+  createCardYear,
+} from './renderGallery';
 
-refs.watchedLibrary.addEventListener('click', () => { renderMovieList(localStorageAPI.KEYS.WATCHED) });
-refs.queueLibrary.addEventListener('click', () => { renderMovieList(localStorageAPI.KEYS.QUEUE) });
+refs.watchedLibrary.addEventListener('click', () => {
+  renderMovieList(localStorageAPI.KEYS.WATCHED);
+});
+refs.queueLibrary.addEventListener('click', () => {
+  renderMovieList(localStorageAPI.KEYS.QUEUE);
+});
 
-function renderMovieList(key) {
+async function renderMovieList(key) {
   const data = localStorageAPI.getDataPerPage(key);
   if (!data || data.length === 0) {
     return;
     //тут будет картинка с котиком
-    //refs.galleryList.closest.insertAdjacentHTML();
   }
-  let genres = data.map(item => {
-    return item.genres;
-  });
-  const result = renederGalleryMarckUp(data, genres);
-  console.log(result)
-  const cardsGallery = movieCardTemplate(result);
-  refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+  try {
+    const genres = await fetch.getGenres().then(list => {
+      return list.genres;
+    });
+    const result = renederGalleryMarckUp(data, genres);
+    const cardsGallery = movieCardTemplate(result);
+    console.log(cardsGallery);
+    refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+  } catch (e) {}
 }
