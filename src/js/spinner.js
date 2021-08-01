@@ -10,14 +10,14 @@ document.body.onload = () => {
   }, 500);
 };
 
-export const spinnerMethod = {
-  removeSpinner: function () {
-    setTimeout(preloader.classList.add('preloader-js'), 500);
-  },
-  addSpinner: function () {
-    preloader.classList.remove('preloader-js');
-  },
-};
+// // export const spinnerMethod = {
+// //   removeSpinner: function () {
+// //     setTimeout(preloader.classList.add('preloader-js'), 500);
+// //   },
+// addSpinner: function () {
+//   preloader.classList.remove('preloader-js');
+// },
+// };
 
 // console.log(spinner.removePreloader);
 // console.log(spinner.addPreloader);
