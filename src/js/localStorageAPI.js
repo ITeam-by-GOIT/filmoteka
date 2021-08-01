@@ -49,14 +49,14 @@ class localStorageAPI {
   }
   static getDataPerPage(key, page = 1, perPage = 18) {
     const data = localStorageAPI.get(key);
+    if (!data || data.length === 0) {
+      return
+    }
     let forRender;
+    forRender = data.slice(0 + perPage * (page - 1), perPage * page);
 
     if (page === 1) {
       forRender = data.slice(0, perPage);
-    }
-    forRender = data.slice(0 + perPage * (page - 1), perPage * page);
-    if (!forRender || forRender.length === 0) {
-      return
     }
     return forRender;
 

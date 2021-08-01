@@ -8,4 +8,5 @@ import './js/buttonScrollUp.js';
 import './js/infiniteScroll.js';
 import './js/modalClose.js';
 import './js/onCardClick.js';
+import './js/renderFromLocalStorage.js';
 import './js/eventHandlerSearch.js';
