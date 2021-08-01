@@ -18,4 +18,7 @@ export const refs = {
   modal: document.querySelector('.js-modal'),
   searchForm: document.querySelector('.js-search-form'),
   cardContainer: document.querySelector('.card-container'),
+  header = document.querySelector('.js-header'),
+  headerButtons = document.querySelector('.js-buttons'),
+  headerNavigation = document.querySelector('.js-header-nav'),
 };

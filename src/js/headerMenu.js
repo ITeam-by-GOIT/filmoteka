@@ -10,17 +10,17 @@ const navigation = document.querySelector('.header-nav');
 const controlPageHome = function () {
   refs.linkMyLibrary.classList.remove('current');
   refs.linkHome.classList.add('current');
-  header.classList.remove('header-container_library');
-  header.classList.add('header-container_home');
+  refs.header.classList.remove('header-container_library');
+  refs.header.classList.add('header-container_home');
   refs.searchForm.classList.remove('visually-hidden');
-  btn.classList.add('visually-hidden');
+  refs.headerButtons.classList.add('visually-hidden');
 };
 const controlPageLib = function () {
   refs.linkHome.classList.remove('current');
   refs.linkMyLibrary.classList.add('current');
-  header.classList.remove('header-container_home');
-  header.classList.add('header-container_library');
-  btn.classList.remove('visually-hidden');
+  refs.header.classList.remove('header-container_home');
+  refs.header.classList.add('header-container_library');
+  refs.headerButtons.classList.remove('visually-hidden');
   refs.searchForm.classList.add('visually-hidden');
 };
 refs.linkMyLibrary.addEventListener('click', controlPageLib);
