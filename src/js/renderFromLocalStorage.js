@@ -10,6 +10,7 @@ refs.queueLibrary.addEventListener('click', renderMovieList(localStorageAPI.KEYS
 function renderMovieList(key) {
   const data = localStorageAPI.getDataPerPage(key);
   if (!data || data.length === 0) {
+    return;
     //тут будет картинка с котиком
     //refs.galleryList.closest.insertAdjacentHTML();
   }
