@@ -2,7 +2,7 @@ import Fetch from './fetchAPI.js';
 import { refs } from './refs.js';
 import { newToastr } from './toastrOptions.js';
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
-import { renederGalleryMarckUp } from './renderGallery.js';
+import { renderGalleryMarkup } from './renderGallery.js';
 
 export default async function onSubmitHandler(e) {
   e.preventDefault();
@@ -15,7 +15,7 @@ export default async function onSubmitHandler(e) {
     const genres = await searchClass.getGenres().then(list => {
       return list.genres;
     });
-    const result = await renederGalleryMarckUp(results, genres);
+    const result = await renderGalleryMarkup(results, genres);
     refs.galleryList.innerHTML = '';
     return refs.galleryList.insertAdjacentHTML('beforeend', movieCardTemplate(result));
   } catch (e) {
