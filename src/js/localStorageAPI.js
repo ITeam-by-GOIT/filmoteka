@@ -1,6 +1,6 @@
 let list = new Array();
 class localStorageAPI {
-  constructor() {}
+  constructor() { }
   static get KEYS() {
     return {
       WATCHED: 'watched',
@@ -37,6 +37,24 @@ class localStorageAPI {
       list.splice(searchIndex, 1);
       localStorage.setItem(key, JSON.stringify(list));
     }
+  }
+
+  static getDataPerPage(key, page = 1, perPage = 18) {
+    const data = localStorageAPI.get(key);
+    let forRender;
+
+    if (page === 1) {
+      forRender = data.slice(0, perPage);
+      // return forRender;
+    }
+    forRender = data.slice(0 + perPage * (page - 1), perPage * page);
+    // return forRender;
+    if (!forRender || forRender.length === 0) {
+      return
+    }
+    console.log(forRender)
+    return forRender;
+
   }
 }
 
