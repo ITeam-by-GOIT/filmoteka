@@ -17,6 +17,7 @@ class localStorageAPI {
     if (!localStorageAPI.get(key)) {
       list.push(Obj);
       localStorage.setItem(key, JSON.stringify(list));
+      list = [];
       return;
     }
 
@@ -63,5 +64,4 @@ class localStorageAPI {
 
   }
 }
-
 export { localStorageAPI };
