@@ -1,11 +1,11 @@
 body.light-theme {
-  background-color: #fff;
-  color: #333333;
+  background-color: var(--light-theme-background-color);
+  color: var(--dark-theme-background-color);
 }
 
 body.dark-theme {
-  background-color: #333333;
-  color: #fff;
+  background-color: var(--dark-theme-background-color);
+  color: var(--light-theme-background-color);
 }
 
 .toolbar {
@@ -14,6 +14,38 @@ body.dark-theme {
   justify-content: flex-end;
   padding: 16px 24px;
   right: -9px;
+}
+body.dark-theme {
+  .footer-container {
+    background-color: #413e3e;
+    color: var(--light-theme-background-color);
+  }
+  .js-link-footer{
+    background-color: #413e3e;
+    color: blue;
+  }
+  .js-modal  {
+    background-color: var(--dark-theme-background-color);
+    color: var(--light-theme-background-color);
+  }
+  .modal-film-description{
+    color: var(--light-theme-background-color);
+  }
+  .modal-secondary-title{
+    
+    color: var(--light-theme-background-color);
+  }
+  .modal-main-title{
+    color: var(--light-theme-background-color);
+  }
+  .modal-item-description-views{
+    background-color: var(--dark-theme-background-color);
+    color: var(--light-theme-background-color);
+  }
+  .moviе-stats__title{
+    color: var(--light-theme-background-color);
+  }
+
 }
 
 /* THEME SWITCH */
@@ -93,4 +125,3 @@ body.dark-theme {
 .theme-switch__toggle:hover + .theme-switch__track {
   box-shadow: 0 0 0 3px #ff6b01;
 }
-

@@ -14,19 +14,19 @@ function changeTheme(evt) {
   if (evt.target.checked) {
     bodyHtml.classList.toggle(Theme.DARK);
     bodyHtml.classList.toggle(Theme.LIGHT);
-    footerTheme.classList.toggle(Theme.DARK);
-    footerTheme.classList.toggle(Theme.LIGHT);
-    modalTheme.classList.toggle(Theme.DARK);
-    modalTheme.classList.toggle(Theme.LIGHT);
+    // footerTheme.classList.toggle(Theme.DARK);
+    // footerTheme.classList.toggle(Theme.LIGHT);
+    // modalTheme.classList.toggle(Theme.DARK);
+    // modalTheme.classList.toggle(Theme.LIGHT);
 
     localStorage.setItem('key', Theme.DARK);
   } else if (!evt.target.checked) {
     bodyHtml.classList.toggle(Theme.LIGHT);
     bodyHtml.classList.toggle(Theme.DARK);
-    footerTheme.classList.toggle(Theme.DARK);
-    footerTheme.classList.toggle(Theme.LIGHT);
-     modalTheme.classList.toggle(Theme.DARK);
-     modalTheme.classList.toggle(Theme.LIGHT);
+    // footerTheme.classList.toggle(Theme.DARK);
+    // footerTheme.classList.toggle(Theme.LIGHT);
+    //  modalTheme.classList.toggle(Theme.DARK);
+    //  modalTheme.classList.toggle(Theme.LIGHT);
     localStorage.setItem('key', Theme.LIGHT);
   }
 }
@@ -45,7 +45,7 @@ function saveTheme() {
   }
 }
 
-saveFooterTheme();
+// saveFooterTheme();
 function saveFooterTheme() {
   const saveKey = localStorage.getItem('key');
   if (!saveKey) {
@@ -59,7 +59,7 @@ function saveFooterTheme() {
   }
 }
 
-saveModalTheme();
+// saveModalTheme();
 function saveModalTheme() {
   const saveKey = localStorage.getItem('key');
   if (!saveKey) {
