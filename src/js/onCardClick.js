@@ -4,6 +4,7 @@ import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
 
+
 const newsPictureApi = new Fetch();
 
 refs.galleryList.addEventListener('click', onCardClick);

@@ -19,5 +19,8 @@ export function modalKeypressEsc(e) {
     refs.cardContainer.innerHTML = '';
     modalAppearanceToggle();
     document.removeEventListener('keydown', modalKeypressEsc);
+    if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
+      renderMovieList(refs.movieGallerySection.dataset.page, 1);
+    }
   }
 }

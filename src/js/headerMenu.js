@@ -13,7 +13,6 @@ const controlPageHome = function () {
   refs.header.classList.add('header-container_home');
   refs.searchForm.classList.remove('visually-hidden');
   refs.headerButtons.classList.add('visually-hidden');
-  renderTrending();
 };
 const controlPageLib = function (e) {
   refs.galleryList.innerHTML = '';
@@ -23,25 +22,25 @@ const controlPageLib = function (e) {
   refs.header.classList.add('header-container_library');
   refs.headerButtons.classList.remove('visually-hidden');
   refs.searchForm.classList.add('visually-hidden');
-  renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
 };
-// refs.linkMyLibrary.addEventListener('click', controlPageLib);
-// refs.linkHome.addEventListener('click', controlPageHome);
 
 refs.headerNavigation.addEventListener('click', evt => {
   evt.preventDefault();
 
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();
+    renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
     return;
   } else if (evt.target === refs.linkHome) {
     controlPageHome();
+    renderTrending();
     return;
   }
 });
 refs.logoHome.addEventListener('click', evt => {
   evt.preventDefault();
   controlPageHome();
+  renderTrending();
 });
 
 // /* === перемикання кнопок в library ===*/

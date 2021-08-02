@@ -2,6 +2,7 @@ import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import Fetch from './fetchAPI';
 import { refs } from './refs';
 import { newToastr } from './toastrOptions.js';
+import { spinnerMethod } from './spinner';
 
 const fetch = new Fetch();
 
@@ -13,6 +14,10 @@ async function renderTrending(page) {
     const trends = await fetch.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
+    if (page > trends.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
     render(trends)
   } catch (e) {
     console.log('this is error:', e);
@@ -26,6 +31,13 @@ async function renderSearchResult(query, page) {
     }
     const data = await fetch.searchByInputQuery(query, page);
     const results = data.results;
+    if (results.length === 0) {
+      newToastr.error('Unsuccessful results. Try different query!')
+    }
+    if (page > data.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
     render(results);
   } catch (e) {
     newToastr.error('Unsuccessful results. Try again!');
