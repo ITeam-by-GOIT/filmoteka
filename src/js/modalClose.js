@@ -8,7 +8,7 @@ export function closeOnClick(e) {
     e.stopPropagation();
     modalAppearanceToggle();
     refs.modalBackdrop.removeEventListener('click', closeOnClick);
-    if (refs.movieGallerySection.dataset.page === 'trending' || refs.movieGallerySection.dataset.page === 'watched') {
+    if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
       renderMovieList(refs.movieGallerySection.dataset.page, 1);
     }
   }
