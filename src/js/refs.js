@@ -17,4 +17,5 @@ export const refs = {
   header: document.querySelector('.js-header'),
   headerButtons: document.querySelector('.js-buttons'),
   headerNavigation: document.querySelector('.js-header-nav'),
+  movieGallerySection: document.querySelector('.movie-gallery-js'),
 };
