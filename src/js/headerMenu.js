@@ -15,7 +15,7 @@ const controlPageHome = function () {
   refs.headerButtons.classList.add('visually-hidden');
   renderTrending();
 };
-const controlPageLib = function () {
+const controlPageLib = function (e) {
   refs.galleryList.innerHTML = '';
   refs.linkHome.classList.remove('current');
   refs.linkMyLibrary.classList.add('current');
@@ -25,11 +25,12 @@ const controlPageLib = function () {
   refs.searchForm.classList.add('visually-hidden');
   renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
 };
-refs.linkMyLibrary.addEventListener('click', controlPageLib);
-refs.linkHome.addEventListener('click', controlPageHome);
+// refs.linkMyLibrary.addEventListener('click', controlPageLib);
+// refs.linkHome.addEventListener('click', controlPageHome);
 
 refs.headerNavigation.addEventListener('click', evt => {
   evt.preventDefault();
+
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();
     return;

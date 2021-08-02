@@ -44,6 +44,10 @@ async function onRender(entries) {
       }
       spinnerMethod.removeSpinner();
     }
+    else {
+      spinnerMethod.removeSpinner();
+      return;
+    }
   }
 }
 
