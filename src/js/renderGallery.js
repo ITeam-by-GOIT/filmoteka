@@ -1,26 +1,45 @@
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import Fetch from './fetchAPI';
 import { refs } from './refs';
+import { newToastr } from './toastrOptions.js';
 
 const fetch = new Fetch();
 
-document.addEventListener('DOMContentLoaded', renderTrending);
+document.addEventListener('DOMContentLoaded', () => { renderTrending(1) });
 
-async function renderTrending() {
+async function renderTrending(page) {
+  refs.movieGallerySection.dataset.page = 'trending';
   try {
-    const trends = await fetch.searchByTrending().then(data => {
+    const trends = await fetch.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
-    const genres = await fetch.getGenres().then(list => {
-      return list.genres;
-    });
-    const result = await renderGalleryMarkup(trends, genres);
-    const cardsGallery = movieCardTemplate(result);
-    refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+    render(trends)
   } catch (e) {
     console.log('this is error:', e);
   }
 }
+async function renderSearchResult(query, page) {
+  refs.movieGallerySection.dataset.page = 'searching';
+  try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
+    const data = await fetch.searchByInputQuery(query, page);
+    const results = data.results;
+    render(results);
+  } catch (e) {
+    newToastr.error('Unsuccessful results. Try again!');
+  }
+}
+async function render(data) {
+  const genres = await fetch.getGenres().then(list => {
+    return list.genres;
+  });
+  const result = await renderGalleryMarkup(data, genres);
+  const cardsGallery = movieCardTemplate(result);
+  refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+}
+
 function renderGalleryMarkup(data, list) {
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
@@ -63,4 +82,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renderGalleryMarkup, createGenres, createCardYear };
+export { renderTrending, renderSearchResult, render };
