@@ -13,8 +13,10 @@ export async function renderMovieList(key, page) {
   const data = localStorageAPI.getDataPerPage(key, page);
   if (!data || data.length === 0) {
     spinnerMethod.removeSpinner();
+    refs.movieGallerySection.firstElementChild.innerHTML = `<div class="notification-icon-wrapper"><svg class="notification-cat-icon" width="250" height="250">
+        <use href="/sprite.5ec50489.svg#icon-notificationCat"></use>
+      </svg></div>`;
     return;
-    //тут будет картинка с котиком
   }
   try {
     render(data);
