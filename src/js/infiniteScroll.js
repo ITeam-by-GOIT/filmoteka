@@ -16,7 +16,7 @@ let page = 1;
 // const spinner = refs.spinnerPreloader;
 // const anchor = refs.aboutTeam;
 
-const observer = new IntersectionObserver(debounce(onRender, 1000), { threshold: 0 });
+const observer = new IntersectionObserver(debounce(onRender, 1000000), { threshold: 0 });
 observer.observe(refs.aboutTeam);
 
 async function onRender(entries) {
