@@ -12,8 +12,9 @@ body.dark-theme {
   position: absolute;
   display: flex;
   justify-content: flex-end;
-  padding: 16px 24px;
-  right: -9px;
+  padding: 16px 16px;
+  right: 0px;
+  bottom: -100px;
 }
 body.dark-theme {
   .footer-container {

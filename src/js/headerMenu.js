@@ -29,10 +29,16 @@ refs.headerNavigation.addEventListener('click', evt => {
 
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
     return;
   } else if (evt.target === refs.linkHome) {
     controlPageHome();
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderTrending();
     return;
   }
@@ -40,6 +46,9 @@ refs.headerNavigation.addEventListener('click', evt => {
 refs.logoHome.addEventListener('click', evt => {
   evt.preventDefault();
   controlPageHome();
+  if (document.querySelector('.js-notification-wrapper')) {
+    document.querySelector('.js-notification-wrapper').remove();
+  }
   renderTrending();
 });
 
@@ -49,6 +58,9 @@ for (const button of buttons) {
   button.addEventListener('click', function () {
     buttons.forEach(i => i.classList.remove('active-btn'));
     this.classList.toggle('active-btn');
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderMovieList(this.dataset.libtype, 1);
   });
 }
