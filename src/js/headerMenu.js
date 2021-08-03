@@ -13,6 +13,8 @@ const controlPageHome = function () {
   refs.header.classList.add('header-container_home');
   refs.searchForm.classList.remove('visually-hidden');
   refs.headerButtons.classList.add('visually-hidden');
+  refs.watchedLibrary.classList.add('active-btn');
+  refs.queueLibrary.classList.remove('active-btn');
 };
 const controlPageLib = function (e) {
   refs.galleryList.innerHTML = '';
@@ -30,6 +32,8 @@ refs.headerNavigation.addEventListener('click', evt => {
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();
     renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
+    refs.watchedLibrary.classList.add('active-btn');
+    refs.queueLibrary.classList.remove('active-btn');
     return;
   } else if (evt.target === refs.linkHome) {
     controlPageHome();
