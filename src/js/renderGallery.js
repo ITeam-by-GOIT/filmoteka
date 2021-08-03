@@ -44,9 +44,22 @@ async function renderSearchResult(query, page) {
   }
 }
 
-async function renderByGenreFilter() {
-  
+async function renderByGenreFilter(genre, page) {
+  refs.movieGallerySection.dataset.page = 'filtering';
+  try {
+    const filtering = await fetch.sortByGenre(genre, page).then(data => {
+      return data.results;
+    });
+    if (page > filtering.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
+    render(filtering);
+  } catch (e) {
+    console.log('this is error:', e);
+  }
 }
+
 async function render(data) {
   const genres = await fetch.getGenres().then(list => {
     return list.genres;
@@ -98,4 +111,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renderSearchResult, render };
+export { renderTrending, renderSearchResult, render, renderByGenreFilter };

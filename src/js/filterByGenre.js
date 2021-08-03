@@ -1,5 +1,5 @@
 import { refs } from './refs.js';
-import { renderTrending, renderSearchResult, render } from './renderGallery.js';
+import { renderTrending, renderSearchResult, render, renderByGenreFilter } from './renderGallery.js';
 import Fetch from './fetchAPI.js';
 import template from '../templates/option.hbs';
 
@@ -25,8 +25,22 @@ async function generateOptions() {
 }
 generateOptions();
 
+divFilter.addEventListener('change', onFilterChoose);
+divFilter.addEventListener('change', renderFirstPageOfFilteredMovies);
+
+async function onFilterChoose(e) {
+  const array = await getGenres();
+  if (e.target.value === 'Choose your genre...') {
+    return `qweeeweeqwe`;
+  }
+  const match = array.genres.find(el => el.name === e.target.value).id;
+
+  const results = await one.sortByGenre(match);
+  return results;
+}
+
 async function renderFirstPageOfFilteredMovies(e) {
-  if (!e.target.value || e.target.value === 'Choose your genre...') {
+  if (e.target.value === 'Choose your genre...') {
     return `qweeeweeqwe`;
   }
   const results = await onFilterChoose(e);
@@ -37,20 +51,7 @@ async function renderFirstPageOfFilteredMovies(e) {
   console.log(results);
 }
 
-divFilter.addEventListener('change', onFilterChoose);
-divFilter.addEventListener('change', renderFirstPageOfFilteredMovies);
-
-async function onFilterChoose(e) {
-  const array = await getGenres();
-  if (!e.target.value || e.target.value === 'Choose your genre...') {
-    return `qweeeweeqwe`;
-  }
-  const match = array.genres.find(el => el.name === e.target.value).id;
-
-  const results = await one.sortByGenre(match);
-  return results;
-}
-
+// for to filter disappear while in library
 let status = 'home';
 const filtersSection = document.querySelector('.js-filters');
 refs.linkHome.addEventListener('click', onHomeClickHandler);
