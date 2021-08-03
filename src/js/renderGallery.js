@@ -43,6 +43,10 @@ async function renderSearchResult(query, page) {
     newToastr.error('Unsuccessful results. Try again!');
   }
 }
+
+async function renderByGenreFilter() {
+  
+}
 async function render(data) {
   const genres = await fetch.getGenres().then(list => {
     return list.genres;
