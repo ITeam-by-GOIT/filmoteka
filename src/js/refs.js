@@ -18,4 +18,9 @@ export const refs = {
   modal: document.querySelector('.js-modal'),
   searchForm: document.querySelector('.js-search-form'),
   cardContainer: document.querySelector('.card-container'),
+
+  switchLangCheckbox: document.querySelector('.switch-lang'),
+  wrapperLangCheckbox: document.querySelector('.wrapper-lang-checkbox'),
+  signLangEng: document.querySelector('.sign-eng'),
+  signLangRus: document.querySelector('.sign-rus'),
 };
