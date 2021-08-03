@@ -21,7 +21,7 @@ export async function watchTrailer() {
         return
     }
 
-    let resultArray = fetchResult.results.find(item => item.type === 'Trailer')
+    let resultArray = fetchResult.results.find(item => (item.type === 'Trailer' && item.site === 'YouTube'))
     player = new YT.Player('player', {
         height: '360',
         width: '640',
