@@ -36,7 +36,7 @@
 <text y="16" x="5" font-size="1.5" font-weight="var(--text-bold)" 
     font-family="var(--text-main)">
         Your list is empty!
-        <tspan y="19" x="5">Please, add movies to list!</tspan>
+        <tspan y="19" x="3">Please, add movies to the list!</tspan>
     </text>
 </symbol>
 <symbol id="moon" viewBox="0 0 32 32"><path fill="#FF9966" d="M17.701 32a15.97 15.97 0 0012.429-5.925c.442-.544-.04-1.339-.723-1.209-7.763 1.478-14.891-4.474-14.891-12.31 0-4.514 2.416-8.665 6.344-10.9.605-.345.453-1.262-.235-1.389-.879-.17-1.89-.267-2.923-.268-8.832 0-16 7.157-16 16 0 8.832 7.157 16 16 16z"/></symbol>
