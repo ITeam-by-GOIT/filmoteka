@@ -29,6 +29,9 @@ refs.headerNavigation.addEventListener('click', evt => {
 
   if (evt.target === refs.linkMyLibrary) {
     controlPageLib();
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderMovieList(localStorageAPI.KEYS.WATCHED, 1);
     return;
   } else if (evt.target === refs.linkHome) {
@@ -43,6 +46,9 @@ refs.headerNavigation.addEventListener('click', evt => {
 refs.logoHome.addEventListener('click', evt => {
   evt.preventDefault();
   controlPageHome();
+  if (document.querySelector('.js-notification-wrapper')) {
+    document.querySelector('.js-notification-wrapper').remove();
+  }
   renderTrending();
 });
 
