@@ -13,9 +13,12 @@ export async function renderMovieList(key, page) {
   const data = localStorageAPI.getDataPerPage(key, page);
   if (!data || data.length === 0) {
     spinnerMethod.removeSpinner();
-    refs.movieGallerySection.firstElementChild.innerHTML = `<div class="notification-icon-wrapper"><svg class="notification-cat-icon" width="250" height="250">
-        <use href="/sprite.5ec50489.svg#icon-notificationCat"></use>
-      </svg></div>`;
+    if (document.querySelector('.js-notification-wrapper') === null) {
+      refs.movieGallerySection.firstElementChild.insertAdjacentHTML(
+        'afterbegin',
+        '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="/sprite.5ec50489.svg#icon-notificationCat"></use></svg></div>',
+      );
+    }
     return;
   }
   try {
