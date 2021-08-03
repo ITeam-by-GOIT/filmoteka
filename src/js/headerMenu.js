@@ -33,6 +33,9 @@ refs.headerNavigation.addEventListener('click', evt => {
     return;
   } else if (evt.target === refs.linkHome) {
     controlPageHome();
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderTrending();
     return;
   }
@@ -49,6 +52,9 @@ for (const button of buttons) {
   button.addEventListener('click', function () {
     buttons.forEach(i => i.classList.remove('active-btn'));
     this.classList.toggle('active-btn');
+    if (document.querySelector('.js-notification-wrapper')) {
+      document.querySelector('.js-notification-wrapper').remove();
+    }
     renderMovieList(this.dataset.libtype, 1);
   });
 }
