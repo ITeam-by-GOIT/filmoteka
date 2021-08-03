@@ -52,4 +52,15 @@ export default class FetchAPI {
     newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
+  async getTrailers(id, language = `en-US`) {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}&language=${language}`,
+    );
+
+    if (response.ok) {
+      return await response.json();
+    }
+    newToastr.error('Unsuccessful results. Try again!');
+    throw new Error(await response.text());
+  }
 }
