@@ -1,11 +1,14 @@
 import { refs } from './refs.js';
-import { renderTrending, renderSearchResult, render, renderByGenreFilter } from './renderGallery.js';
+import {
+  renderTrending,
+  renderSearchResult,
+  render,
+  renderByGenreFilter,
+} from './renderGallery.js';
 import Fetch from './fetchAPI.js';
 import template from '../templates/option.hbs';
 
 const one = new Fetch();
-const divFilter = document.querySelector('.divForFilters');
-const select = document.querySelector('.js-select');
 
 async function getGenres() {
   const genres = await one.getGenres();
@@ -21,35 +24,19 @@ async function generateOptions() {
   const array = dataForGenerationOfOptions.genres.map(el => el);
   array.unshift(emptyObj);
   const markup = array.map(el => template({ el }));
-  select.insertAdjacentHTML('beforeend', markup);
+  refs.select.insertAdjacentHTML('beforeend', markup);
 }
 generateOptions();
 
-divFilter.addEventListener('change', onFilterChoose);
-divFilter.addEventListener('change', renderFirstPageOfFilteredMovies);
+refs.divFilter.addEventListener('change', onFilterChooseAndRenderPages);
 
-async function onFilterChoose(e) {
-  const array = await getGenres();
+async function onFilterChooseAndRenderPages(e) {
+
   if (e.target.value === 'Choose your genre...') {
-    return `qweeeweeqwe`;
+    return;
   }
-  const match = array.genres.find(el => el.name === e.target.value).id;
-
-  const results = await one.sortByGenre(match);
-  return results;
-}
-
-async function renderFirstPageOfFilteredMovies(e) {
-  refs.movieGallerySection.dataset.page = 'filtering';
-  if (e.target.value === 'Choose your genre...') {
-    return `qweeeweeqwe`;
-  }
-  const results = await onFilterChoose(e);
-
-  refs.galleryList.innerHTML = '';
-  render(results.results);
-
-  console.log(results);
+    refs.movieGallerySection.dataset.page = 'filtering';
+    renderByGenreFilter(e.target.value, 1);
 }
 
 // for to filter disappear while in library
@@ -68,3 +55,5 @@ function onMyLibraryClickHandler() {
   status = 'library';
   filtersSection.classList.add('visually-hidden');
 }
+
+export { getGenres };

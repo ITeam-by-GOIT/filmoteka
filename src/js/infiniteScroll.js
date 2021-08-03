@@ -40,7 +40,6 @@ async function onRender(entries) {
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'filtering':
-          console.log(document.querySelector('.js-select').value, page)
           renderByGenreFilter(document.querySelector('.js-select').value, page)
           previousPage = refs.movieGallerySection.dataset.page;
           break;
