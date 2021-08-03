@@ -11,6 +11,9 @@ document.addEventListener('DOMContentLoaded', () => { renderTrending(1) });
 async function renderTrending(page) {
   refs.movieGallerySection.dataset.page = 'trending';
   try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
     const trends = await fetch.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
