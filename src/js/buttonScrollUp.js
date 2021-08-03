@@ -1,5 +1,4 @@
 import { refs } from './refs.js';
-// const buttonScrollUp = document.querySelector('.js-buttonScrollUp');
 
 window.addEventListener('scroll', onScroll);
 refs.buttonScrollUp.addEventListener('click', onButtonScrollUp);

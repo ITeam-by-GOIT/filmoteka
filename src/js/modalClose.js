@@ -1,5 +1,6 @@
 import modalAppearanceToggle from './modalAppearanceToggle';
 import { refs } from './refs.js';
+import { renderMovieList } from './renderFromLocalStorage';
 
 export function closeOnClick(e) {
   if (e.target.closest('.js-close-btn') || e.target === refs.modalBackdrop) {
@@ -7,6 +8,9 @@ export function closeOnClick(e) {
     e.stopPropagation();
     modalAppearanceToggle();
     refs.modalBackdrop.removeEventListener('click', closeOnClick);
+    if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
+      renderMovieList(refs.movieGallerySection.dataset.page, 1);
+    }
   }
 }
 
@@ -15,5 +19,8 @@ export function modalKeypressEsc(e) {
     refs.cardContainer.innerHTML = '';
     modalAppearanceToggle();
     document.removeEventListener('keydown', modalKeypressEsc);
+    if (refs.movieGallerySection.dataset.page === 'queue' || refs.movieGallerySection.dataset.page === 'watched') {
+      renderMovieList(refs.movieGallerySection.dataset.page, 1);
+    }
   }
 }

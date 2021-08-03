@@ -19,5 +19,3 @@ export const spinnerMethod = {
   },
 };
 
-// console.log(spinner.removePreloader);
-// console.log(spinner.addPreloader);

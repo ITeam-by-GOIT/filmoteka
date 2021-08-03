@@ -4,6 +4,7 @@ import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
 
+
 const newsPictureApi = new Fetch();
 
 refs.galleryList.addEventListener('click', onCardClick);
@@ -27,7 +28,6 @@ function onOpenModal(id) {
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
 
-    console.log(w);
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
