@@ -5,7 +5,7 @@ import './js/infiniteScroll.js';
 import './js/fetchAPI.js';
 import './js/localStorageAPI.js';
 import './js/buttonScrollUp.js';
-// import './js/modal-movie-render.js';
+import './js/trailer.js';
 import './js/modalClose.js';
 import './js/onCardClick.js';
 import './js/renderFromLocalStorage.js';
