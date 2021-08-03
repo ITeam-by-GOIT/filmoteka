@@ -40,6 +40,7 @@ async function onFilterChoose(e) {
 }
 
 async function renderFirstPageOfFilteredMovies(e) {
+  refs.movieGallerySection.dataset.page = 'filtering';
   if (e.target.value === 'Choose your genre...') {
     return `qweeeweeqwe`;
   }

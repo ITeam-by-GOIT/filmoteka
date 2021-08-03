@@ -5,6 +5,7 @@ import { renderSearchResult, renderTrending, renderByGenreFilter } from './rende
 import { spinnerMethod } from './spinner';
 const debounce = require('lodash.debounce');
 
+
 const fetch = new FetchAPI();
 let page = 1;
 let previousPage = refs.movieGallerySection.dataset.page;
@@ -39,7 +40,8 @@ async function onRender(entries) {
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'filtering':
-          renderByGenreFilter(undefined, page);
+          console.log(document.querySelector('.js-select').value, page)
+          renderByGenreFilter(document.querySelector('.js-select').value, page)
           previousPage = refs.movieGallerySection.dataset.page;
           break;
 

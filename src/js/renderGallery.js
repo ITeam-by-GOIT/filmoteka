@@ -50,6 +50,7 @@ async function renderByGenreFilter(genre, page) {
     const filtering = await fetch.sortByGenre(genre, page).then(data => {
       return data.results;
     });
+    console.log(filtering)
     if (page > filtering.total_pages) {
       spinnerMethod.removeSpinner();
       return;
