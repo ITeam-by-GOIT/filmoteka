@@ -1,27 +1,58 @@
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
 import Fetch from './fetchAPI';
 import { refs } from './refs';
+import { newToastr } from './toastrOptions.js';
+import { spinnerMethod } from './spinner';
 
 const fetch = new Fetch();
 
-document.addEventListener('DOMContentLoaded', renderTrending);
+document.addEventListener('DOMContentLoaded', () => { renderTrending(1) });
 
-async function renderTrending() {
+async function renderTrending(page) {
+  refs.movieGallerySection.dataset.page = 'trending';
   try {
-    const trends = await fetch.searchByTrending().then(data => {
+    const trends = await fetch.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
-    const genres = await fetch.getGenres().then(list => {
-      return list.genres;
-    });
-    const result = await renederGalleryMarckUp(trends, genres);
-    const cardsGallery = movieCardTemplate(result);
-    refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+    if (page > trends.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
+    render(trends)
   } catch (e) {
     console.log('this is error:', e);
   }
 }
-function renederGalleryMarckUp(data, list) {
+async function renderSearchResult(query, page) {
+  refs.movieGallerySection.dataset.page = 'searching';
+  try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
+    const data = await fetch.searchByInputQuery(query, page);
+    const results = data.results;
+    if (results.length === 0) {
+      newToastr.error('Unsuccessful results. Try different query!')
+    }
+    if (page > data.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
+    render(results);
+  } catch (e) {
+    newToastr.error('Unsuccessful results. Try again!');
+  }
+}
+async function render(data) {
+  const genres = await fetch.getGenres().then(list => {
+    return list.genres;
+  });
+  const result = await renderGalleryMarkup(data, genres);
+  const cardsGallery = movieCardTemplate(result);
+  refs.galleryList.insertAdjacentHTML('beforeend', cardsGallery);
+}
+
+function renderGalleryMarkup(data, list) {
   if (Object.keys(data[0]).includes('genres')) {
     let newData = data.map(item => {
       const id = item.genres.map(item => item.id);
@@ -49,18 +80,18 @@ function createGenres(obj, list) {
   const movieCardGenresArray = list.filter(item => movieCardGenresList.includes(item.id));
   const mapedGenres = movieCardGenresArray.map(({ name }) => name);
 
-  let movieGenreArraySlise = [];
+  let movieGenreArraySlice = [];
   if (mapedGenres.length < 3) {
-    movieGenreArraySlise = mapedGenres;
+    movieGenreArraySlice = mapedGenres;
   } else {
-    movieGenreArraySlise = mapedGenres.slice(0, 2);
-    movieGenreArraySlise.push('Other');
+    movieGenreArraySlice = mapedGenres.slice(0, 2);
+    movieGenreArraySlice.push('Other');
   }
 
-  return movieGenreArraySlise.join(', ');
+  return movieGenreArraySlice.join(', ');
 }
 
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renederGalleryMarckUp, createGenres, createCardYear };
+export { renderTrending, renderSearchResult, render };

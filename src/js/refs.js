@@ -9,10 +9,6 @@ export const refs = {
   galleryList: document.querySelector('.js-gallery-list'),
   buttonScrollUp: document.querySelector('.js-buttonScrollUp'),
   spinnerPreloader: document.querySelector('.js-preloader-page'),
-  // modalBtnRemoveWatched: document.querySelector('.js-modal-btn-remove-watched'),
-  // modalBtnWatched: document.querySelector('.js-modal-btn-watched'),
-  // modalBtnQueue: document.querySelector('.js-modal-btn-queue'),
-  // modalBtnRemoveQueue: document.querySelector('.js-modal-btn-remove-queue'),
   modalBackdrop: document.querySelector('.js-backdrop'),
   modalCloseBtn: document.querySelector('.js-close-btn'),
   modal: document.querySelector('.js-modal'),
@@ -23,4 +19,9 @@ export const refs = {
   wrapperLangCheckbox: document.querySelector('.wrapper-lang-checkbox'),
   signLangEng: document.querySelector('.sign-eng'),
   signLangRus: document.querySelector('.sign-rus'),
+
+  header: document.querySelector('.js-header'),
+  headerButtons: document.querySelector('.js-buttons'),
+  headerNavigation: document.querySelector('.js-header-nav'),
+  movieGallerySection: document.querySelector('.movie-gallery-js'),
 };
