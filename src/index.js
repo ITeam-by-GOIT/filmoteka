@@ -8,5 +8,6 @@ import './js/buttonScrollUp.js';
 import './js/trailer.js';
 import './js/modalClose.js';
 import './js/onCardClick.js';
+import './js/change-theme.js';
 import './js/renderFromLocalStorage.js';
 import './js/eventHandlerSearch.js';
