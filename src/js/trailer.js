@@ -13,8 +13,11 @@ const fetch = new FetchAPI;
 export async function watchTrailer() {
     const id = document.querySelector('.modal-wrapper').dataset.id
     const fetchResult = await fetch.getTrailers(id);
+    if (fetchResult.results.length === 0) {
+        return
+    }
+
     let resultArray = fetchResult.results.find(item => item.type === 'Trailer')
-    // refs.trailerIframe.src = `https://www.youtube.com/embed/${resultArray.key}`
     refs.cardContainer.innerHTML = '';
     modalAppearanceToggle()
     player = new YT.Player('player', {
@@ -27,7 +30,7 @@ export async function watchTrailer() {
         }
     });
     function onYouTubeIframeAPIReady() { player }
-    console.log(player)
+
     refs.trailerBackdrop.classList.remove('is-hidden')
 };
 refs.trailerBackdrop.addEventListener('click', (e) => {
