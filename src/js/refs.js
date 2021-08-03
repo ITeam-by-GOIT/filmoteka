@@ -18,4 +18,6 @@ export const refs = {
   headerButtons: document.querySelector('.js-buttons'),
   headerNavigation: document.querySelector('.js-header-nav'),
   movieGallerySection: document.querySelector('.movie-gallery-js'),
+  trailerBackdrop: document.querySelector('.js-backdrop-trailer'),
+  trailerIframe: document.querySelector('.js-trailer'),
 };
