@@ -25,11 +25,8 @@ body {
   color: var(--color-design-main);
   font-weight: var(--text-bold);
 }
-
-.wrapper {
-  // box-sizing: border-box;
-  position: relative;
-  min-height: 100%;
+button {
+  cursor: pointer;
 }
 
 .list {

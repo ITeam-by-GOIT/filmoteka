@@ -1,17 +1,17 @@
-const buttonScrollUp = document.querySelector('.js-buttonScrollUp');
+import { refs } from './refs.js';
 
 window.addEventListener('scroll', onScroll);
-buttonScrollUp.addEventListener('click', onButtonScrollUp);
+refs.buttonScrollUp.addEventListener('click', onButtonScrollUp);
 
 function onScroll() {
   const scrolled = window.pageYOffset;
   const clientHeight = document.documentElement.clientHeight;
 
   if (scrolled > clientHeight) {
-    buttonScrollUp.classList.add('buttonScrollUp--show');
+    refs.buttonScrollUp.classList.add('buttonScrollUp--show');
   }
   if (scrolled < clientHeight) {
-    buttonScrollUp.classList.remove('buttonScrollUp--show');
+    refs.buttonScrollUp.classList.remove('buttonScrollUp--show');
   }
 }
 

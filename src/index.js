@@ -1,14 +1,14 @@
-import { refs } from './js/refs.js';
+import './js/headerMenu.js';
 import './js/spinner.js';
 import './sass/main.scss';
+import './js/infiniteScroll.js';
 import './js/fetchAPI.js';
-import { watchedMoviesList, queueMoviesList, localStorageAPI } from './js/localStorageAPI.js';
-import Fetch from './js/fetchAPI.js';
 import './js/localStorageAPI.js';
 import './js/buttonScrollUp.js';
-import aboutMovieTemplates from './templates/aboutMovieTemplates.hbs';
-import movieCardTemplate from './templates/movieCardTemplate.hbs';
-import onSubmitHandler from './js/eventListenerSearch.js';
 import './js/team-modal.js';
-
-refs.searchForm.addEventListener('submit', onSubmitHandler);
+import './js/trailer.js';
+import './js/modalClose.js';
+import './js/onCardClick.js';
+import './js/change-theme.js';
+import './js/renderFromLocalStorage.js';
+import './js/eventHandlerSearch.js';

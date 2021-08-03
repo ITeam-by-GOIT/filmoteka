@@ -1,13 +1,37 @@
-<header class="header header-container_home">
+<header class="header js-header header-container_home">
   <div class="container">
-    <nav class="header-nav">
+    <!-- Разметка переключателя темы -->
+    <div class="toolbar">
+      <div class="theme-switch">
+        <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
+          <use href="./images/sprite.svg#sun"></use>
+        </svg>
+
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Переключить между тёмной и светлой темой"
+          />
+          <label aria-hidden="true" class="theme-switch__track" for="theme-switch-toggle"> </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+
+        <svg class="theme-switch__icon" aria-label="Иконка луны">
+          <use href="./images/sprite.svg#moon"></use>
+        </svg>
+      </div>
+    </div>
+
+    <nav class="header-nav js-header-nav">
       <a class="logo link js-logo" href="">
         <svg class="logo-icon">
           <use href="./images/sprite.svg#icon-film"></use>
         </svg>
         <span class="logo-text">Filmoteka</span>
       </a>
-
       <ul class="navigation-menu-list list">
         <li class="navigation-list-link">
           <a class="link navigation-menu-link current js-home_page" href="">Home</a>
@@ -36,9 +60,17 @@
         </div>
       </form>
     </div>
-    <div class="buttons visually-hidden">
-      <button class="button btn_watched active-btn js-btn_watched" type="button">Watched</button>
-      <button class="button btn_queue js-btn_queue" type="button">Queue</button>
+    <div class="buttons js-buttons visually-hidden">
+      <button
+        class="button_lib btn_watched active-btn js-btn_watched"
+        data-libType="watched"
+        type="button"
+      >
+        Watched
+      </button>
+      <button class="button_lib btn_queue js-btn_queue" type="button" data-libType="queue">
+        Queue
+      </button>
     </div>
   </div>
 </header>

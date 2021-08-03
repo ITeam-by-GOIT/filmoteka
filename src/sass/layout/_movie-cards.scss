@@ -2,6 +2,7 @@
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;
+  height: 406px;
 }
 
 .moviе-stats__title {
@@ -9,11 +10,22 @@
   font-size: 12px;
   line-height: 1.667;
   text-transform: uppercase;
-  color: var(--main-black-color);
 }
+.moviе-stats {
+  margin-bottom: 5px;
+  padding: 10px;
 
-.moviе-stats__info {
-  display: flex;
+  &__title {
+    font-weight: var(--text-bold);
+    font-size: 12px;
+    line-height: 1.667;
+    text-transform: uppercase;
+    color: var(--main-black-color);
+  }
+
+  &__info {
+    display: flex;
+  }
 }
 
 .moviе-genre {

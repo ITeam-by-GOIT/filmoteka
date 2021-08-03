@@ -1,15 +1,12 @@
 import Fetch from './fetchAPI.js';
 import { refs } from './refs.js';
+import { renderSearchResult } from './renderGallery.js';
 
 export default async function onSubmitHandler(e) {
   e.preventDefault();
-
-  const query = refs.searchInput.value;
-  const searchClass = new Fetch();
-  try {
-    const data = await searchClass.searchByInputQuery(query);
-    return data;
-  } catch (e) {
-    console.log(`Opps we got some error here...don't panic! we already did it for you :)`, e);
+  const query = refs.searchInput.value.trim();
+  if (!query) {
+    return;
   }
+  renderSearchResult(query, 1);
 }
