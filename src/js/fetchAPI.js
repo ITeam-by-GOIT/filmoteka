@@ -31,7 +31,7 @@ export default class FetchAPI {
 
   async searchByMovieId(id, language = `en-US`) {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=${language}`,
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${this.API_KEY}&language=${language}&append_to_response="video"`,
     );
 
     if (response.ok) {
