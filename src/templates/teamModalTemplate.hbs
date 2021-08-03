@@ -1,36 +1,23 @@
 <ul class='team-list list'>
   {{#each this}}
     <li class='team-list-item'>
-      <img class='about-list-img' src='./images/{{name}}.jpg' alt='Фото {{name}} {{lastName}}' />
+      <div class='image-wrapper'>
+        <img class='about-list-img' src='{{img}}' alt='Фото {{name}} {{lastName}}' />
+      </div>
       <div class='team-list-text-container'>
         <h3 class='team-list-title'>{{name}} {{lastName}}</h3>
-        <p class='team-list-text' lang='en'>{{this.description}}</p>
         <ul class='social-list list'>
-          <li class='social-list-item'>
-            <a href='{{instagramLink}}' class='social-list-link'>
-              <svg class='social-list-icon' width='20' height='20'>
-                <use href='./images/sprite.svg#icon-instagram'></use>
-              </svg>
-            </a>
-          </li>
           <li class='social-list-item'>
             <a href='{{githubLink}}' class='social-list-link'>
               <svg class='social-list-icon' width='20' height='20'>
-                <use href='./images/sprite.svg#icon-github'></use>
-              </svg>
-            </a>
-          </li>
-          <li class='social-list-item'>
-            <a href='{{facebookLink}}' class='social-list-link'>
-              <svg class='social-list-icon' width='20' height='20'>
-                <use href='./images/sprite.svg#icon-facebook'></use>
+                <use href='./sprite.svg#icon-github'></use>
               </svg>
             </a>
           </li>
           <li class='social-list-item'>
             <a href='{{linkedInLink}}' class='social-list-link'>
               <svg class='social-list-icon' width='20' height='20'>
-                <use href='./images/icons/sprite.svg#icon-linkedin'></use>
+                <use href='./sprite.svg#icon-linkedin'></use>
               </svg>
             </a>
           </li>

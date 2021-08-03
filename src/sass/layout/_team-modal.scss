@@ -1,9 +1,16 @@
-@mixin getWidth($collum-number, $gutter) {
-  width: calc((100% - (#{$gutter} * (#{$collum-number}))) / #{$collum-number});
-}
 .team-list {
-  font-size: 16px;
-  margin: 15px * -1;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+@media screen and (min-width: 768px) {
+  .team-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .team-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 .team-list-title {
   font-size: inherit;
@@ -19,6 +26,14 @@
   border-radius: 0px 0px 4px 4px;
   background-color: #ffffff;
   margin: 15px;
+  // height: 250px;
+}
+.image-wrapper {
+  height: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .team-list-text {
@@ -29,20 +44,7 @@
   text-align: center;
   padding: 30px;
 }
-@media screen and (min-width: 768px) {
-  .team-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .team-list-item {
-    @include getWidth(4, 30);
-  }
-}
-@media screen and (min-width: 1200px) {
-  .team-list-item {
-    @include getWidth(5, 30);
-  }
-}
+
 .social-list {
   display: flex;
   justify-content: center;
