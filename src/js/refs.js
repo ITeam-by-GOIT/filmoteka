@@ -19,4 +19,6 @@ export const refs = {
   headerNavigation: document.querySelector('.js-header-nav'),
   movieGallerySection: document.querySelector('.movie-gallery-js'),
   anchor: document.querySelector('.anchor'),
+  trailerBackdrop: document.querySelector('.js-backdrop-trailer'),
+  trailerIframe: document.querySelector('.js-trailer'),
 };
