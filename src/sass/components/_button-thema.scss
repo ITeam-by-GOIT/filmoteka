@@ -20,32 +20,30 @@ body.dark-theme {
     background-color: #413e3e;
     color: var(--light-theme-background-color);
   }
-  .js-link-footer{
+  .js-link-footer {
     background-color: #413e3e;
-    color: blue;
+    color: rgb(255, 174, 0);
   }
-  .js-modal  {
+  .js-modal {
     background-color: var(--dark-theme-background-color);
     color: var(--light-theme-background-color);
   }
-  .modal-film-description{
+  .modal-film-description {
     color: var(--light-theme-background-color);
   }
-  .modal-secondary-title{
-    
+  .modal-secondary-title {
     color: var(--light-theme-background-color);
   }
-  .modal-main-title{
+  .modal-main-title {
     color: var(--light-theme-background-color);
   }
-  .modal-item-description-views{
+  .modal-item-description-views {
     background-color: var(--dark-theme-background-color);
     color: var(--light-theme-background-color);
   }
-  .moviе-stats__title{
+  .moviе-stats__title {
     color: var(--light-theme-background-color);
   }
-
 }
 
 /* THEME SWITCH */
