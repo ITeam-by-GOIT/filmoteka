@@ -3,7 +3,7 @@ import { refs } from './refs.js';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
-
+import { watchTrailer } from './trailer.js';
 
 const newsPictureApi = new Fetch();
 
@@ -68,5 +68,8 @@ function onOpenModal(id) {
       event.target.previousElementSibling.classList.toggle('visually-hidden');
       localStorageAPI.delete(localStorageAPI.KEYS.QUEUE, movie);
     }
+    document.querySelector('.modal-img-play')
+      .addEventListener('click', watchTrailer)
   });
+
 }
