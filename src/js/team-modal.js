@@ -1,6 +1,6 @@
 import { refs } from './refs.js';
 import teamModalTemplate from '../templates/teamModalTemplate.hbs';
-
+import { closeOnClick, modalKeypressEsc } from './modalClose.js';
 const team = [
     {
         name: "Anzhela",
@@ -47,16 +47,16 @@ const team = [
     {
         name: "Roma",
         lastName: "Petryk",
-        img: "",
+        img: "https://media-exp1.licdn.com/dms/image/C5603AQEQ_PtYYwZLGw/profile-displayphoto-shrink_800_800/0/1627629651851?e=1633564800&v=beta&t=arI8yRjMvplDPNGYghSS-MJyrOsz2WHp7t4CJwpqQVU",
         githubLink: "https://github.com/fantasticargument",
-        linkedInLink: "",
+        linkedInLink: "https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BF%D0%B5%D1%82%D1%80%D0%B8%D0%BA-792b52218",
     },
     {
         name: "Vasyl",
         lastName: "Shcherbyna",
         img: "./vasyl.jpg",
         githubLink: "https://github.com/VasylShcherbyna",
-        linkedInLink: "https://www.linkedin.com/in/vasyl-shcherbyna-110751211/",
+        linkedInLink: "https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BF%D0%B5%D1%82%D1%80%D0%B8%D0%BA-792b52218/detail/photo/",
     },
     {
         name: "Yevheniia",
@@ -70,11 +70,13 @@ const team = [
         lastName: "Koliadzhyn",
         img: "./yuriy.jpg",
         githubLink: "https://github.com/Koliadjun",
-        linkedInLink: "https://github.com/Koliadjun",
+        linkedInLink: "https://www.linkedin.com/in/yurii-koliadzhyn-b89493104/",
     },
 ];
 const showTeamModal = (e) => {
     e.preventDefault();
+    document.addEventListener('keydown', modalKeypressEsc);
+    refs.modalBackdrop.addEventListener('click', closeOnClick);
     const teamModalHTML = teamModalTemplate(team);
     refs.modalBackdrop.classList.remove('is-hidden');
     refs.cardContainer.insertAdjacentHTML('beforeend', teamModalHTML);
