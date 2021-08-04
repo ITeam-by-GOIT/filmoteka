@@ -2,6 +2,7 @@ import { refs } from './refs.js';
 import { renderMovieList } from './renderFromLocalStorage.js';
 import { renderTrending } from './renderGallery.js';
 import { localStorageAPI } from './localStorageAPI.js';
+import { onHomeClickHandler, onMyLibraryClickHandler } from './filterByGenre.js';
 
 // /*=== Перемикання сторінок з використанням класів ===*/
 
@@ -15,6 +16,8 @@ export const controlPageHome = function () {
   refs.headerButtons.classList.add('visually-hidden');
   refs.watchedLibrary.classList.add('active-btn');
   refs.queueLibrary.classList.remove('active-btn');
+  onHomeClickHandler();
+
 };
 const controlPageLib = function (e) {
   refs.galleryList.innerHTML = '';
@@ -24,6 +27,7 @@ const controlPageLib = function (e) {
   refs.header.classList.add('header-container_library');
   refs.headerButtons.classList.remove('visually-hidden');
   refs.searchForm.classList.add('visually-hidden');
+  onMyLibraryClickHandler();
 };
 
 refs.headerNavigation.addEventListener('click', evt => {

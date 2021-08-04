@@ -3,7 +3,7 @@ import renameAll from './renameAll.js';
 import { renderTrending } from './renderGallery.js';
 import { refs } from './refs.js';
 import { controlPageHome } from './headerMenu.js';
-
+import { generateOptions } from './filterByGenre.js';
 const Languege = {
   en: 'en-US',
   ru: 'ru-RU',
@@ -23,6 +23,7 @@ checkboxLanguegeRef.addEventListener('click', chengaLanguege);
   bodyRef.classList.add(fetchAPI.language);
 
   renameAll(fetchAPI.language);
+  generateOptions();
   renderTrending();
   controlPageHome();
 })();

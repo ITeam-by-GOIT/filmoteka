@@ -54,7 +54,7 @@ export default {
 
   async sortByGenre(genre, page = 1) {
     const response = await fetch(
-      `https://api.themoviedb.org/3/discover/movie?api_key=${this.API_KEY}&with_genres=${genre}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${page}`,
+      `https://api.themoviedb.org/3/discover/movie?api_key=${this.API_KEY}&with_genres=${genre}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${page}&language=${this.language}`,
     );
 
     if (response.ok) {
