@@ -23,7 +23,6 @@ checkboxLanguegeRef.addEventListener('click', chengaLanguege);
   bodyRef.classList.add(fetchAPI.language);
 
   renameAll(fetchAPI.language);
-  console.log(fetchAPI.language);
   renderTrending();
   togglePageToHome();
 })();
@@ -43,7 +42,6 @@ function chengaLanguege() {
     checkboxLanguegeRef.checked = false;
   }
   renameAll(fetchAPI.language);
-  console.log(fetchAPI.language);
   renderTrending();
   togglePageToHome();
 }
