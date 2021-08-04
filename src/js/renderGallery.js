@@ -38,14 +38,21 @@ async function renderSearchResult(query, page) {
     const data = await fetchAPI.searchByInputQuery(query, page);
 
     const results = data.results;
+    if (results.length === 0 && page === 1) {
+      newToastr.error('Unsuccessful results. Try different query!');
+      setTimeout(() => {
+        refs.searchInput.value = '';
+        const event = new Event('input');
+        refs.searchInput.dispatchEvent(event);
+      }, 2000)
+
+    }
+
     if (page > data.total_pages) {
       spinnerMethod.removeSpinner();
       return;
     }
 
-    if (results.length === 0) {
-      newToastr.error('Unsuccessful results. Try different query!');
-    }
     render(results);
   } catch (e) {
     newToastr.error('Unsuccessful results. Try again!');
@@ -113,7 +120,9 @@ function createGenres(obj, list) {
     movieGenreArraySlice = mapedGenres;
   } else {
     movieGenreArraySlice = mapedGenres.slice(0, 2);
-    movieGenreArraySlice.push('Other');
+    if (fetchAPI.language === 'en-US') { movieGenreArraySlice.push('Other'); }
+    else { movieGenreArraySlice.push('другие'); }
+
   }
 
   return movieGenreArraySlice.join(', ');
