@@ -82,13 +82,14 @@
 .language-checkbox {
   position: absolute;
   left: 0;
-
-  @media screen and (max-width: 767px) {
+  top: 33px;
+  @media screen and (min-width: 767px) and (max-width: 1023px) {
     top: 33px;
+    left: 50px;
   }
 
-  @media screen and (min-width: 768px) and (max-width: 1023px) {
-    top: 50px;
+  @media screen and (min-width: 1024px) {
+    top: 35px;
     left: 50px;
   }
 }
