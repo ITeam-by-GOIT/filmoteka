@@ -17,10 +17,10 @@ checkboxLanguegeRef.addEventListener('click', chengaLanguege);
     fetchAPIconsole.log(fetchAPI.language);
     localStorage.setItem('languege', fetchAPI.language);
   } else {
-    fetch.language = localStorage.getItem('languege');
+    fetchAPI.language = localStorage.getItem('languege');
   }
   checkboxLanguegeRef.checked = fetchAPI.language === Languege.en ? false : true;
-  bodyRef.classList.add(fetch.language);
+  bodyRef.classList.add(fetchAPI.language);
 
   renameAll(fetchAPI.language);
   console.log(fetchAPI.language);
@@ -33,8 +33,8 @@ function chengaLanguege() {
 
   if (fetchAPI.language === Languege.en) {
     fetchAPI.language = Languege.ru;
-    localStorage.setItem('languege', fetch.language);
-    bodyRef.classList.replace(oldLanguege, fetch.language);
+    localStorage.setItem('languege', fetchAPI.language);
+    bodyRef.classList.replace(oldLanguege, fetchAPI.language);
     checkboxLanguegeRef.checked = true;
   } else {
     fetchAPI.language = Languege.en;
