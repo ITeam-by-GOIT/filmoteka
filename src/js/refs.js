@@ -20,7 +20,4 @@ export const refs = {
   movieGallerySection: document.querySelector('.movie-gallery-js'),
   divFilter: document.querySelector('.divForFilters'),
   select: document.querySelector('.js-select'),
-  anchor: document.querySelector('.anchor'),
-  trailerBackdrop: document.querySelector('.js-backdrop-trailer'),
-  trailerIframe: document.querySelector('.js-trailer'),
 };
