@@ -21,18 +21,18 @@
 
   <body>
     <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-      <include src="./partials/header.html"></include>
-       <include src="./partials/filters.html"></include>
-      <main>
+    <include src="./partials/header.html"></include>
+    <include src="./partials/filters.html"></include>
+    <main>
       <h1 class="visually-hidden">Movie library</h1>
-        <section class="movie-gallery movie-gallery-js" data-page="trending">
-          <div class="container">
-            <ul class="gallery-list list js-gallery-list"></ul>
-          </div>
-        </section>
+      <section class="movie-gallery movie-gallery-js" data-page="trending">
+        <div class="container">
+          <ul class="gallery-list list js-gallery-list"></ul>
+        </div>
         <div class="anchor"></div>
-      </main>
-      <include src="./partials/footer.html"></include>
+      </section>
+    </main>
+    <include src="./partials/footer.html"></include>
     <include src="./partials/buttonScrollUp.html"></include>
     <include src="./partials/modal.html"></include>
     <include src="./partials/spinner.html"></include>
