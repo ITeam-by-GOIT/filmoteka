@@ -10,3 +10,4 @@ import './js/modalClose.js';
 import './js/onCardClick.js';
 import './js/renderFromLocalStorage.js';
 import './js/eventHandlerSearch.js';
+import './js/switch-lang.js';
