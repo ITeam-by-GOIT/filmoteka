@@ -4,8 +4,8 @@ import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import aboutMovieTemplatesRU from '../templates/aboutMovieTemplatesRU.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
-
 // const newsPictureApi = new Fetch();
+import { watchTrailer } from './trailer.js';
 
 refs.galleryList.addEventListener('click', onCardClick);
 
@@ -34,6 +34,7 @@ function onOpenModal(id) {
     }
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
+    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
       document.querySelector('.js-modal-btn-remove-watched').classList.toggle('visually-hidden');
@@ -73,5 +74,8 @@ function onOpenModal(id) {
       event.target.previousElementSibling.classList.toggle('visually-hidden');
       localStorageAPI.delete(localStorageAPI.KEYS.QUEUE, movie);
     }
+    document.querySelector('.modal-img-play')
+      .addEventListener('click', watchTrailer)
   });
+
 }

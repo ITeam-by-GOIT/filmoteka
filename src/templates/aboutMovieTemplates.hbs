@@ -1,55 +1,60 @@
-<div class="modal-wrapper"> 
-    <a class="modal-wrapper-link" href="">
-<div class="wrapper-img">
-    <img class="img-modal" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="cover film">
-    <div class="overlay">
+<div class='modal-wrapper js-modal-wrapper' data-id='{{id}}'>
+  <div class='wrapper-img'>
+    <img class='img-modal' src='https://image.tmdb.org/t/p/w500{{poster_path}}' alt='cover film' />
+    <div class='overlay'>
 
-        {{!-- <svg class="modal-img-play" fill="red" width="12" height="16">
+      {{! <svg class="modal-img-play" fill="red" width="12" height="16">
             <use width="12" height="16" href="./play-svg.svg"></use>
-        </svg> --}}
-        <img class="modal-img-play" src="./play-orange.png" alt="icon play">
-                {{!-- <img class="modal-img-play" src="./music-play.png" alt="icon play"> --}}
+        </svg> }}
+      <img class='modal-img-play' src='./play-orange.png' alt='icon play' />
+      {{! <img class="modal-img-play" src="./music-play.png" alt="icon play"> }}
 
-        {{!-- <img class="modal-img-play" src="./play-border.png" alt="icon play"> --}}
-
+      {{! <img class="modal-img-play" src="./play-border.png" alt="icon play"> }}
 
     </div>
-</div>
-</a>
-<div class="modal-right-part">
-  <h2 class="modal-main-title">{{original_title}}</h2>
-  <div class="modal-lists-wrapper">
-      <ul class="modal-list-denominations list">
-          <li class="modal-item-position">Vote<span class="modal-item-span">/</span>Votes</li>
-          <li class="modal-item-position">Popularity</li>
-          <li class="modal-item-position">Original Title</li>
-          <li class="modal-item-position">Genre</li>
+  </div>
+  <div class='modal-right-part'>
+    <h2 class='modal-main-title'>{{title}}</h2>
+    <div class='modal-lists-wrapper'>
+      <ul class='modal-list-denominations list'>
+        <li class='modal-item-position'>Vote<span class='modal-item-span'>/</span>Votes</li>
+        <li class='modal-item-position'>Popularity</li>
+        <li class='modal-item-position'>Original Title</li>
+        <li class='modal-item-position'>Genre</li>
       </ul>
-      <ul class="modal-list-descriptions list">
-        <li class="modal-item-description item-flex">
-          <p class="modal-item-description-rating">{{vote_average}}</p><span class="modal-item-span">/</span>
-          <p class="modal-item-description-views">{{vote_count}}</p>
+      <ul class='modal-list-descriptions list'>
+        <li class='modal-item-description item-flex'>
+          <p class='modal-item-description-rating'>{{vote_average}}</p><span
+            class='modal-item-span'
+          >/</span>
+          <p class='modal-item-description-views'>{{vote_count}}</p>
         </li>
-        <li class="modal-item-description">{{popularity}}</li>
-        <li class="modal-item-description">{{title}}</li>
-        <li class="modal-item-description">
-          <ul class="modal-list-genres list">
+        <li class='modal-item-description'>{{popularity}}</li>
+        <li class='modal-item-description'>{{title}}</li>
+        <li class='modal-item-description'>
+          <ul class='modal-list-genres list'>
             {{#each genres}}
-            <li class="modal-item-genres">
-              {{this.name}}
-            </li>
+              <li class='modal-item-genres'>
+                {{this.name}}
+              </li>
             {{/each}}
           </ul>
         </li>
-        </ul>
+      </ul>
     </div>
-    <h3 class="modal-secondary-title">About</h3>
-    <p class="modal-film-description">{{overview}}</p>
-    <div class="modal-wrapper-btn">
-       <button class="modal-btn modal-btn-watched js-modal-btn-watched" type="button">add to watched</button>
-       <button class="visually-hidden modal-btn modal-btn-remove modal-btn-remove-watched js-modal-btn-remove-watched" type="button">remove from watched</button>
-       <button class="modal-btn modal-btn-queue js-modal-btn-queue" type="button">add to queue</button>
-       <button class="visually-hidden modal-btn modal-btn-remove modal-btn-remove-queue js-modal-btn-remove-queue" type="button">remove from queue</button>
+    <h3 class='modal-secondary-title'>About</h3>
+    <p class='modal-film-description'>{{overview}}</p>
+    <div class='modal-wrapper-btn'>
+      <button class='modal-btn modal-btn-watched js-modal-btn-watched' type='button'>add to watched</button>
+      <button
+        class='visually-hidden modal-btn modal-btn-remove modal-btn-remove-watched js-modal-btn-remove-watched'
+        type='button'
+      >remove from watched</button>
+      <button class='modal-btn modal-btn-queue js-modal-btn-queue' type='button'>add to queue</button>
+      <button
+        class='visually-hidden modal-btn modal-btn-remove modal-btn-remove-queue js-modal-btn-remove-queue'
+        type='button'
+      >remove from queue</button>
     </div>
-</div>
+  </div>
 </div>

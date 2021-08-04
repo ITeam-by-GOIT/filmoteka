@@ -10,6 +10,9 @@
 /*modal-card*/
 @import './modal-movie';
 
+/*filters*/
+@import './filters-section';
+
 /* === Gallery section styles === */
 @import './gallery-cards';
 
@@ -18,3 +21,9 @@
 
 /* === Gallery movie styles === */
 @import './movie-cards';
+
+/* === Gallery movie styles === */
+@import './team-modal';
+
+/* === Gallery notification styles === */
+@import './gallery-notification';

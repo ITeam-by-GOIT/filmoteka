@@ -3,6 +3,7 @@ import fetchAPI from './fetchAPI.js';
 import { refs } from './refs';
 import { newToastr } from './toastrOptions.js';
 import { spinnerMethod } from './spinner';
+import { getGenres } from './filterByGenre';
 
 // const fetch = new Fetch();
 
@@ -13,6 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
 async function renderTrending(page) {
   refs.movieGallerySection.dataset.page = 'trending';
   try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
     const trends = await fetchAPI.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
@@ -47,6 +51,26 @@ async function renderSearchResult(query, page) {
     newToastr.error('Unsuccessful results. Try again!');
   }
 }
+
+async function renderByGenreFilter(genre, page) {
+  try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
+    const array = await getGenres();
+    const genreId = array.genres.find(el => el.name === genre).id;
+    const results = await fetchAPI.sortByGenre(genreId, page);
+
+    if (page > results.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
+    render(results.results);
+  } catch (e) {
+    console.log('this is error:', e);
+  }
+}
+
 async function render(data) {
   const genres = await fetchAPI.getGenres().then(list => {
     return list.genres;
@@ -98,4 +122,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renderSearchResult, render };
+export { renderTrending, renderSearchResult, render, renderByGenreFilter };
