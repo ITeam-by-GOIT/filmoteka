@@ -45,14 +45,6 @@ body.dark-theme {
   .moviе-stats__title {
     color: var(--light-theme-background-color);
   }
-  .buttonScrollUp {
-    background-color: var(--main-white-color);
-    color: var(--secondary-active-color);
-    &:hover {
-      background-color: var(--secondary-active-color);
-      color: var(--main-white-color);
-    }
-  }
 }
 
 /* THEME SWITCH */

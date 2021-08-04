@@ -27,6 +27,7 @@ function onOpenModal(id) {
   newsPictureApi.searchByMovieId(id).then(movie => {
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
+    console.log(movie)
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
