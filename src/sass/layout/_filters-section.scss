@@ -1,24 +1,12 @@
 .filters {
-  background-color: var(--for-pagination-footer-votes-background-color);
-  margin-bottom: 0px;
+    background-color: #f7f7f7;
+    margin-bottom: 0px;
+
 }
 .divForFilters {
-  height: 85px;
-  overflow: hidden;
+    height: 85px;
+    overflow: hidden;
 }
 .select {
-  width: 200px;
-
-  border: 1px solid var(--main-black-color);
-  border-radius: 10px;
-  cursor: pointer;
-}
-.options {
-  color: var(--footer-text-color);
-  background-color: var(--background-transparent-color);
-  transition: color 250ms linear, background-color 250ms linear;
-}
-.options:hover {
-  background-color: var(--modal-backdrop-color);
-  color: var(--main-white-color);
+    width: 200px;
 }
