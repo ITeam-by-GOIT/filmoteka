@@ -5,7 +5,7 @@ import { localStorageAPI } from './localStorageAPI.js';
 
 // /*=== Перемикання сторінок з використанням класів ===*/
 
-const controlPageHome = function () {
+export const controlPageHome = function () {
   refs.galleryList.innerHTML = '';
   refs.linkMyLibrary.classList.remove('current');
   refs.linkHome.classList.add('current');

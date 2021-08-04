@@ -2,6 +2,7 @@ import fetchAPI from './fetchAPI.js';
 import renameAll from './renameAll.js';
 import { renderTrending } from './renderGallery.js';
 import { refs } from './refs.js';
+import { controlPageHome } from './headerMenu.js';
 
 const Languege = {
   en: 'en-US',
@@ -24,7 +25,7 @@ checkboxLanguegeRef.addEventListener('click', chengaLanguege);
 
   renameAll(fetchAPI.language);
   renderTrending();
-  togglePageToHome();
+  controlPageHome();
 })();
 
 function chengaLanguege() {
@@ -43,12 +44,5 @@ function chengaLanguege() {
   }
   renameAll(fetchAPI.language);
   renderTrending();
-  togglePageToHome();
-}
-
-function togglePageToHome() {
-  refs.home.classList.add('menu-link--curent');
-  refs.linkMyLibrary.classList.remove('menu-link--curent');
-  refs.linkHome.classList.add('header-home');
-  refs.linkHome.classList.remove('header-lib');
+  controlPageHome();
 }
