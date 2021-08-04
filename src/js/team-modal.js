@@ -79,6 +79,7 @@ const showTeamModal = (e) => {
     refs.modalBackdrop.addEventListener('click', closeOnClick);
     const teamModalHTML = teamModalTemplate(team);
     refs.modalBackdrop.classList.remove('is-hidden');
+    document.body.classList.add('modal-open');
     refs.cardContainer.insertAdjacentHTML('beforeend', teamModalHTML);
 };
 refs.aboutTeam.addEventListener('click', showTeamModal);

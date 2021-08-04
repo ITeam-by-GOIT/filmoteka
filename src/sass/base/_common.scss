@@ -25,6 +25,9 @@ body {
   color: var(--color-design-main);
   font-weight: var(--text-bold);
 }
+body.modal-open {
+  overflow: hidden;
+}
 button {
   cursor: pointer;
 }

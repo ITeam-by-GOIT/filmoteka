@@ -23,6 +23,7 @@ function onOpenModal(id) {
   refs.modalBackdrop.addEventListener('click', closeOnClick);
 
   refs.modalBackdrop.classList.remove('is-hidden');
+  document.body.classList.add('modal-open');
 
   fetchAPI.searchByMovieId(id).then(movie => {
     let currentPageLanguage = localStorage.getItem('language');
