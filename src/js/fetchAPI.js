@@ -64,9 +64,9 @@ export default {
     throw new Error(await response.text());
   },
 
-  async getTrailers(id, language = `en-US`) {
+  async getTrailers(id) {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}&language=${language}`,
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}&language=${this.language}`,
     );
 
     if (response.ok) {

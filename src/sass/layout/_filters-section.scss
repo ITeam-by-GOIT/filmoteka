@@ -3,11 +3,17 @@
   margin-bottom: 0px;
 }
 .divForFilters {
-  height: 85px;
   overflow: hidden;
+  position: absolute;
+  left: 16px;
+  bottom: 10px;
+  padding: 16px 0;
 }
 .select {
-  width: 200px;
+  width: 150px;
+  @media screen and (min-width: 767px) {
+    width: 200px;
+  }
 
   border: 1px solid var(--main-black-color);
   border-radius: 10px;

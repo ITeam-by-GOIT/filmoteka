@@ -28,6 +28,7 @@ const controlPageLib = function (e) {
   refs.headerButtons.classList.remove('visually-hidden');
   refs.searchForm.classList.add('visually-hidden');
   onMyLibraryClickHandler();
+  refs.searchInput.value = '';
 };
 
 refs.headerNavigation.addEventListener('click', evt => {

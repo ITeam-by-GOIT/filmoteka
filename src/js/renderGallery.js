@@ -38,13 +38,13 @@ async function renderSearchResult(query, page) {
     const data = await fetchAPI.searchByInputQuery(query, page);
 
     const results = data.results;
-
-    if (results.length === 0) {
-      newToastr.error('Unsuccessful results. Try different query!');
-    }
     if (page > data.total_pages) {
       spinnerMethod.removeSpinner();
       return;
+    }
+
+    if (results.length === 0) {
+      newToastr.error('Unsuccessful results. Try different query!');
     }
     render(results);
   } catch (e) {

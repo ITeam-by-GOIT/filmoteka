@@ -13,7 +13,7 @@ export async function renderMovieList(key, page) {
   const data = localStorageAPI.getDataPerPage(key, page);
   if (!data || data.length === 0) {
     spinnerMethod.removeSpinner();
-    if (document.querySelector('.js-notification-wrapper') === null) {
+    if (document.querySelector('.js-notification-wrapper') === null && page === 1) {
       refs.movieGallerySection.firstElementChild.insertAdjacentHTML(
         'afterbegin',
         '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="./sprite.svg#icon-notificationCat"></use></svg></div>',

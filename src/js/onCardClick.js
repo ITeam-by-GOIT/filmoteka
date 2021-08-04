@@ -25,16 +25,16 @@ function onOpenModal(id) {
   refs.modalBackdrop.classList.remove('is-hidden');
 
   fetchAPI.searchByMovieId(id).then(movie => {
-    let currentPageLanguage = localStorage.getItem('languege');
+    let currentPageLanguage = localStorage.getItem('language');
 
     if (currentPageLanguage === 'en-US') {
       refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     } else if (currentPageLanguage === 'ru-RU') {
       refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplatesRU(movie));
+
     }
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
-    refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
       document.querySelector('.js-modal-btn-remove-watched').classList.toggle('visually-hidden');

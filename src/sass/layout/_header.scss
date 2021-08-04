@@ -2,14 +2,12 @@
   padding-top: 46px;
   padding-bottom: 46px;
   height: 230px;
+  position: relative;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     padding-top: 41px;
     padding-bottom: 41px;
   }
-}
-.header > .container {
-  position: relative;
 }
 .header-container_home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
