@@ -3,7 +3,7 @@ import { refs } from './refs.js';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
-
+import { watchTrailer } from './trailer.js';
 
 const newsPictureApi = new Fetch();
 
@@ -27,7 +27,6 @@ function onOpenModal(id) {
   newsPictureApi.searchByMovieId(id).then(movie => {
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
-
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
     if (w) {
       document.querySelector('.js-modal-btn-watched').classList.toggle('visually-hidden');
@@ -68,5 +67,8 @@ function onOpenModal(id) {
       event.target.previousElementSibling.classList.toggle('visually-hidden');
       localStorageAPI.delete(localStorageAPI.KEYS.QUEUE, movie);
     }
+    document.querySelector('.modal-img-play')
+      .addEventListener('click', watchTrailer)
   });
+
 }
