@@ -1,11 +1,11 @@
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
-import Fetch from './fetchAPI';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs';
 import { newToastr } from './toastrOptions.js';
 import { spinnerMethod } from './spinner';
 import { getGenres } from './filterByGenre';
 
-const fetch = new Fetch();
+// const fetch = new Fetch();
 
 document.addEventListener('DOMContentLoaded', () => {
   renderTrending(1);
@@ -17,7 +17,7 @@ async function renderTrending(page) {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
     }
-    const trends = await fetch.searchByTrending(undefined, page).then(data => {
+    const trends = await fetchAPI.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
     if (page > trends.total_pages) {
@@ -35,8 +35,10 @@ async function renderSearchResult(query, page) {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
     }
-    const data = await fetch.searchByInputQuery(query, page);
+    const data = await fetchAPI.searchByInputQuery(query, page);
+
     const results = data.results;
+
     if (results.length === 0) {
       newToastr.error('Unsuccessful results. Try different query!');
     }
@@ -57,7 +59,7 @@ async function renderByGenreFilter(genre, page) {
     }
     const array = await getGenres();
     const genreId = array.genres.find(el => el.name === genre).id;
-    const results = await fetch.sortByGenre(genreId, page);
+    const results = await fetchAPI.sortByGenre(genreId, page);
 
     if (page > results.total_pages) {
       spinnerMethod.removeSpinner();
@@ -70,7 +72,7 @@ async function renderByGenreFilter(genre, page) {
 }
 
 async function render(data) {
-  const genres = await fetch.getGenres().then(list => {
+  const genres = await fetchAPI.getGenres().then(list => {
     return list.genres;
   });
   const result = await renderGalleryMarkup(data, genres);

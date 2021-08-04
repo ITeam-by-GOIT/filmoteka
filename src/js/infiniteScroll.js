@@ -1,12 +1,11 @@
 import { renderMovieList } from './renderFromLocalStorage';
-import FetchAPI from './fetchAPI';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs';
 import { renderSearchResult, renderTrending, renderByGenreFilter } from './renderGallery.js';
 import { spinnerMethod } from './spinner';
 const debounce = require('lodash.debounce');
 
-
-const fetch = new FetchAPI();
+// const fetch = new FetchAPI();
 let page = 1;
 let previousPage = refs.movieGallerySection.dataset.page;
 
@@ -48,8 +47,7 @@ async function onRender(entries) {
           break;
       }
       spinnerMethod.removeSpinner();
-    }
-    else {
+    } else {
       spinnerMethod.removeSpinner();
       return;
     }

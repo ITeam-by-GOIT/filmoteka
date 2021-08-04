@@ -1,4 +1,4 @@
-import Fetch from './fetchAPI.js';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs.js';
 import { renderSearchResult } from './renderGallery.js';
 

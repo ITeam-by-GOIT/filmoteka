@@ -1,11 +1,11 @@
-import Fetch from './fetchAPI.js';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs.js';
 import aboutMovieTemplates from '../templates/aboutMovieTemplates.hbs';
+import aboutMovieTemplatesRU from '../templates/aboutMovieTemplatesRU.hbs';
 import { localStorageAPI } from './localStorageAPI.js';
 import { closeOnClick, modalKeypressEsc } from './modalClose.js';
+// const newsPictureApi = new Fetch();
 import { watchTrailer } from './trailer.js';
-
-const newsPictureApi = new Fetch();
 
 refs.galleryList.addEventListener('click', onCardClick);
 
@@ -24,7 +24,14 @@ function onOpenModal(id) {
 
   refs.modalBackdrop.classList.remove('is-hidden');
 
-  newsPictureApi.searchByMovieId(id).then(movie => {
+  fetchAPI.searchByMovieId(id).then(movie => {
+    let currentPageLanguage = localStorage.getItem('languege');
+
+    if (currentPageLanguage === 'en-US') {
+      refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));
+    } else if (currentPageLanguage === 'ru-RU') {
+      refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplatesRU(movie));
+    }
     const w = localStorageAPI.check(localStorageAPI.KEYS.WATCHED, movie);
     const q = localStorageAPI.check(localStorageAPI.KEYS.QUEUE, movie);
     refs.cardContainer.insertAdjacentHTML('beforeend', aboutMovieTemplates(movie));

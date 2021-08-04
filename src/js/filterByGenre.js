@@ -5,17 +5,17 @@ import {
   render,
   renderByGenreFilter,
 } from './renderGallery.js';
-import Fetch from './fetchAPI.js';
+import fetchAPI from './fetchAPI.js';
 import template from '../templates/option.hbs';
 
-const one = new Fetch();
+// const fetchAPI = new Fetch();
 
 async function getGenres() {
-  const genres = await one.getGenres();
+  const genres = await fetchAPI.getGenres();
   return genres;
 }
 
-async function generateOptions() {
+export async function generateOptions() {
   const emptyObj = {
     name: 'Choose your genre...',
     id: undefined,
@@ -26,7 +26,7 @@ async function generateOptions() {
   const markup = array.map(el => template({ el }));
   refs.select.insertAdjacentHTML('beforeend', markup);
 }
-generateOptions();
+
 
 refs.divFilter.addEventListener('change', onFilterChooseAndRenderPages);
 
@@ -35,23 +35,23 @@ async function onFilterChooseAndRenderPages(e) {
   if (e.target.value === 'Choose your genre...') {
     return;
   }
-    refs.movieGallerySection.dataset.page = 'filtering';
-    renderByGenreFilter(e.target.value, 1);
+  refs.movieGallerySection.dataset.page = 'filtering';
+  renderByGenreFilter(e.target.value, 1);
 }
 
 // for to filter disappear while in library
 let status = 'home';
 const filtersSection = document.querySelector('.js-filters');
-refs.linkHome.addEventListener('click', onHomeClickHandler);
-refs.linkMyLibrary.addEventListener('click', onMyLibraryClickHandler);
-refs.logoHome.addEventListener('click', onHomeClickHandler);
+// refs.linkHome.addEventListener('click', onHomeClickHandler);
+// refs.linkMyLibrary.addEventListener('click', onMyLibraryClickHandler);
+// refs.logoHome.addEventListener('click', onHomeClickHandler);
 
-function onHomeClickHandler() {
+export function onHomeClickHandler() {
   filtersSection.classList.remove('visually-hidden');
   status = 'home';
 }
 
-function onMyLibraryClickHandler() {
+export function onMyLibraryClickHandler() {
   status = 'library';
   filtersSection.classList.add('visually-hidden');
 }
