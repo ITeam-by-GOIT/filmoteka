@@ -1,12 +1,23 @@
 <header class="header js-header header-container_home">
   <div class="container">
+    <!-- фільтр -->
+    <div class="divForFilters">
+      <select
+        name=""
+        id=""
+        label=""
+        class="select js-select"
+        onfocus="this.size=4;"
+        onblur="this.size=1;"
+        onchange="this.size=1; this.blur();"
+      ></select>
+    </div>
     <!-- Разметка переключателя темы -->
     <div class="toolbar">
       <div class="theme-switch">
         <svg class="theme-switch__icon" role="img" aria-label="Иконка солнца">
           <use href="./images/sprite.svg#sun"></use>
         </svg>
-
         <div class="theme-switch__control">
           <input
             class="theme-switch__toggle"
@@ -34,7 +45,7 @@
       </a>
       <ul class="navigation-menu-list list">
         <li class="navigation-list-link">
-          <a class="link navigation-menu-link current js-home_page" id = "home" href="">Home</a>
+          <a class="link navigation-menu-link current js-home_page" id="home" href="">Home</a>
         </li>
         <li class="navigation-list-link">
           <a class="link navigation-menu-link js-lib_page" href="">My library</a>
@@ -44,7 +55,6 @@
     <div class="language-checkbox">
       <span class="text-content">EN</span>
       <label class="checkbox">
-    
         <input type="checkbox" class="js-switch-input" id="language-switch-control" checked />
         <span class="text-content">ru</span>
       </label>
@@ -81,7 +91,4 @@
       </button>
     </div>
   </div>
-
-
 </header>
-

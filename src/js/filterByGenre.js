@@ -15,15 +15,24 @@ async function getGenres() {
   return genres;
 }
 
-export async function generateOptions() {
-  const emptyObj = {
-    name: 'Choose your genre...',
-    id: undefined,
-  };
+export async function generateOptions(language = 'en-US') {
+  let emptyObj = new Object();
+  if (language === 'en-US') {
+    emptyObj = {
+      name: 'Choose your genre...',
+      id: undefined,
+    };
+  } else {
+    emptyObj = {
+      name: 'Выберите жанр...',
+      id: undefined,
+    };
+  }
   const dataForGenerationOfOptions = await getGenres();
   const array = dataForGenerationOfOptions.genres.map(el => el);
   array.unshift(emptyObj);
   const markup = array.map(el => template({ el }));
+  refs.select.innerHTML = '';
   refs.select.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -41,19 +50,19 @@ async function onFilterChooseAndRenderPages(e) {
 
 // for to filter disappear while in library
 let status = 'home';
-const filtersSection = document.querySelector('.js-filters');
+// const filtersSection = document.querySelector('.js-filters');
 // refs.linkHome.addEventListener('click', onHomeClickHandler);
 // refs.linkMyLibrary.addEventListener('click', onMyLibraryClickHandler);
 // refs.logoHome.addEventListener('click', onHomeClickHandler);
 
 export function onHomeClickHandler() {
-  filtersSection.classList.remove('visually-hidden');
+  refs.divFilter.classList.remove('visually-hidden');
   status = 'home';
 }
 
 export function onMyLibraryClickHandler() {
   status = 'library';
-  filtersSection.classList.add('visually-hidden');
+  refs.divFilter.classList.add('visually-hidden');
 }
 
 export { getGenres };

@@ -12,7 +12,7 @@ const team = [
     {
         name: "Anastasyia",
         lastName: "Loseva",
-        img: "https://media-exp1.licdn.com/dms/image/D5635AQGbHXNPMH6Mhw/profile-framedphoto-shrink_800_800/0/1622388006560?e=1628121600&v=beta&t=XbabdlzTcAPYcnuwODMaje5ozCoSuwJCbw7jczT48ZA",
+        img: "https://media-exp1.licdn.com/dms/image/D5635AQGzCvAtSGeHew/profile-framedphoto-shrink_800_800/0/1628075664626?e=1628190000&v=beta&t=aA1Jd2RcmE4TnoEPmCtr9X5uaIS5BRJFs_7ObMZeHgo",
         githubLink: "https://github.com/Anastasia199129",
         linkedInLink: "https://www.linkedin.com/in/anastasyia-loseva-68a34a211/",
     },
@@ -49,14 +49,14 @@ const team = [
         lastName: "Petryk",
         img: "https://media-exp1.licdn.com/dms/image/C5603AQEQ_PtYYwZLGw/profile-displayphoto-shrink_800_800/0/1627629651851?e=1633564800&v=beta&t=arI8yRjMvplDPNGYghSS-MJyrOsz2WHp7t4CJwpqQVU",
         githubLink: "https://github.com/fantasticargument",
-        linkedInLink: "https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BF%D0%B5%D1%82%D1%80%D0%B8%D0%BA-792b52218",
+        linkedInLink: "https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BF%D0%B5%D1%82%D1%80%D0%B8%D0%BA-792b52218/",
     },
     {
         name: "Vasyl",
         lastName: "Shcherbyna",
         img: "./vasyl.jpg",
         githubLink: "https://github.com/VasylShcherbyna",
-        linkedInLink: "https://www.linkedin.com/in/%D1%80%D0%BE%D0%BC%D0%B0%D0%BD-%D0%BF%D0%B5%D1%82%D1%80%D0%B8%D0%BA-792b52218/detail/photo/",
+        linkedInLink: "https://www.linkedin.com/in/vasyl-shcherbyna-110751211/",
     },
     {
         name: "Yevheniia",
