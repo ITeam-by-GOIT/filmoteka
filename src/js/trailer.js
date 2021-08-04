@@ -7,11 +7,11 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 let player;
-const fetch = new FetchAPI;
+// const fetch = new FetchAPI;
 
 export async function watchTrailer() {
     const id = document.querySelector('.modal-wrapper').dataset.id
-    const fetchResult = await fetch.getTrailers(id);
+    const fetchResult = await FetchAPI.getTrailers(id);
     refs.trailerBackdrop.classList.remove('is-hidden')
     if (fetchResult.results.length === 0) {
         refs.trailerBackdrop.insertAdjacentHTML(

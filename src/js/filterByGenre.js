@@ -5,13 +5,13 @@ import {
   render,
   renderByGenreFilter,
 } from './renderGallery.js';
-import Fetch from './fetchAPI.js';
+import fetchAPI from './fetchAPI.js';
 import template from '../templates/option.hbs';
 
-const one = new Fetch();
+// const fetchAPI = new Fetch();
 
 async function getGenres() {
-  const genres = await one.getGenres();
+  const genres = await fetchAPI.getGenres();
   return genres;
 }
 
@@ -35,8 +35,8 @@ async function onFilterChooseAndRenderPages(e) {
   if (e.target.value === 'Choose your genre...') {
     return;
   }
-    refs.movieGallerySection.dataset.page = 'filtering';
-    renderByGenreFilter(e.target.value, 1);
+  refs.movieGallerySection.dataset.page = 'filtering';
+  renderByGenreFilter(e.target.value, 1);
 }
 
 // for to filter disappear while in library
