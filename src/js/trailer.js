@@ -16,7 +16,7 @@ export async function watchTrailer() {
     if (fetchResult.results.length === 0) {
         refs.trailerBackdrop.insertAdjacentHTML(
             'afterbegin',
-            '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="/sprite.5ec50489.svg#icon-notificationCatTrailer"></use></svg></div>',
+            '<div class="js-notification-wrapper"><svg class="notification-cat-icon" width="280" height="280"><use href="./sprite.svg#icon-notificationCatTrailer"></use></svg></div>',
         );
         return
     }
@@ -34,8 +34,9 @@ export async function watchTrailer() {
 };
 refs.trailerBackdrop.addEventListener('click', (e) => {
     e.currentTarget.classList.toggle('is-hidden');
+    refs.trailerBackdrop.innerHTML = '';
+    refs.trailerBackdrop.innerHTML = '<div id="player"></div>';
     stopVideo();
-    refs.trailerBackdrop.innerHTML = '<div id="player"></div>'
 })
 
 function onPlayerReady(event) {
