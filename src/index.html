@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Заголовок страницы</title>
+    <title>Bla bla movies library</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.0.0/modern-normalize.min.css"
@@ -16,26 +16,27 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
   </head>
   <body>
-    <!-- Так добавляются фрагменты в главные HTML-файлы страниц. -->
-    <div class="wrapper">
-      <include src="./partials/header.html"></include>
-      <include src="./partials/spinner.html"></include>
-      <include src="./partials/filters.html"></include>
+    <include src="./partials/header.html"></include>
+    <include src="./partials/spinner.html"></include>
+    <include src="./partials/filters.html"></include>
+    <main>
+      <h1 class="visually-hidden">Movie library</h1>
       <section class="movie-gallery movie-gallery-js" data-page="trending">
         <div class="container">
-
-
           <ul class="gallery-list list js-gallery-list"></ul>
         </div>
       </section>
-      <include src="./partials/footer.html"></include>
-    </div>
+      <div class="anchor"></div>
+    </main>
+    <include src="./partials/footer.html"></include>
     <include src="./partials/modal-team-list.html"></include>
     <include src="./partials/buttonScrollUp.html"></include>
     <include src="./partials/modal.html"></include>
-
+    <include src="./partials/spinner.html"></include>
+    <include src="./partials/modal-trailer.html"></include>
     <script src="./index.js"></script>
   </body>
 </html>

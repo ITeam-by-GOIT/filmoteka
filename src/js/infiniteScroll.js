@@ -11,7 +11,7 @@ let page = 1;
 let previousPage = refs.movieGallerySection.dataset.page;
 
 const observer = new IntersectionObserver(debounce(onRender, 1000), { threshold: 0 });
-observer.observe(refs.aboutTeam);
+observer.observe(refs.anchor);
 async function onRender(entries) {
   let resultList;
   const query = refs.searchInput.value;
