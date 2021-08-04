@@ -1,9 +1,10 @@
 import { renderMovieList } from './renderFromLocalStorage';
 import FetchAPI from './fetchAPI';
 import { refs } from './refs';
-import { renderSearchResult, renderTrending } from './renderGallery.js';
+import { renderSearchResult, renderTrending, renderByGenreFilter } from './renderGallery.js';
 import { spinnerMethod } from './spinner';
 const debounce = require('lodash.debounce');
+
 
 const fetch = new FetchAPI();
 let page = 1;
@@ -23,19 +24,23 @@ async function onRender(entries) {
       page += 1;
       switch (refs.movieGallerySection.dataset.page) {
         case 'trending':
-          renderTrending(page)
+          renderTrending(page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'searching':
-          renderSearchResult(query, page)
+          renderSearchResult(query, page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'watched':
-          renderMovieList(refs.movieGallerySection.dataset.page, page)
+          renderMovieList(refs.movieGallerySection.dataset.page, page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'queue':
-          renderMovieList(refs.movieGallerySection.dataset.page, page)
+          renderMovieList(refs.movieGallerySection.dataset.page, page);
+          previousPage = refs.movieGallerySection.dataset.page;
+          break;
+        case 'filtering':
+          renderByGenreFilter(document.querySelector('.js-select').value, page)
           previousPage = refs.movieGallerySection.dataset.page;
           break;
 

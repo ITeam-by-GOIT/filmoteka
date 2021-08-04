@@ -52,6 +52,19 @@ export default class FetchAPI {
     newToastr.error('Unsuccessful results. Try again!');
     throw new Error(await response.text());
   }
+
+  async sortByGenre(genre, page = 1) {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/discover/movie?api_key=${this.API_KEY}&with_genres=${genre}&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=${page}`,
+    );
+
+    if (response.ok) {
+      return await response.json();
+    }
+    newToastr.error('Unsuccessful results. Try again!');
+    throw new Error(await response.text());
+  }
+
   async getTrailers(id, language = `en-US`) {
     const response = await fetch(
       `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.API_KEY}&language=${language}`,

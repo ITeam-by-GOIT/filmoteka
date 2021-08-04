@@ -3,10 +3,13 @@ import Fetch from './fetchAPI';
 import { refs } from './refs';
 import { newToastr } from './toastrOptions.js';
 import { spinnerMethod } from './spinner';
+import { getGenres } from './filterByGenre';
 
 const fetch = new Fetch();
 
-document.addEventListener('DOMContentLoaded', () => { renderTrending(1) });
+document.addEventListener('DOMContentLoaded', () => {
+  renderTrending(1);
+});
 
 async function renderTrending(page) {
   refs.movieGallerySection.dataset.page = 'trending';
@@ -21,7 +24,7 @@ async function renderTrending(page) {
       spinnerMethod.removeSpinner();
       return;
     }
-    render(trends)
+    render(trends);
   } catch (e) {
     console.log('this is error:', e);
   }
@@ -35,7 +38,7 @@ async function renderSearchResult(query, page) {
     const data = await fetch.searchByInputQuery(query, page);
     const results = data.results;
     if (results.length === 0) {
-      newToastr.error('Unsuccessful results. Try different query!')
+      newToastr.error('Unsuccessful results. Try different query!');
     }
     if (page > data.total_pages) {
       spinnerMethod.removeSpinner();
@@ -46,6 +49,26 @@ async function renderSearchResult(query, page) {
     newToastr.error('Unsuccessful results. Try again!');
   }
 }
+
+async function renderByGenreFilter(genre, page) {
+  try {
+    if (page === 1) {
+      refs.galleryList.innerHTML = '';
+    }
+    const array = await getGenres();
+    const genreId = array.genres.find(el => el.name === genre).id;
+    const results = await fetch.sortByGenre(genreId, page);
+
+    if (page > results.total_pages) {
+      spinnerMethod.removeSpinner();
+      return;
+    }
+    render(results.results);
+  } catch (e) {
+    console.log('this is error:', e);
+  }
+}
+
 async function render(data) {
   const genres = await fetch.getGenres().then(list => {
     return list.genres;
@@ -97,4 +120,4 @@ function createGenres(obj, list) {
 function createCardYear(obj) {
   return obj.release_date ? obj.release_date.slice(0, 4) : '';
 }
-export { renderTrending, renderSearchResult, render };
+export { renderTrending, renderSearchResult, render, renderByGenreFilter };

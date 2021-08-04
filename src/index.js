@@ -12,3 +12,5 @@ import './js/onCardClick.js';
 import './js/change-theme.js';
 import './js/renderFromLocalStorage.js';
 import './js/eventHandlerSearch.js';
+import './js/filterByGenre.js'
+
