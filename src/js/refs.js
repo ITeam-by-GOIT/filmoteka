@@ -3,6 +3,7 @@ export const refs = {
   linkMyLibrary: document.querySelector('.js-lib_page'),
   linkHome: document.querySelector('.js-home_page'),
   logoHome: document.querySelector('.js-logo'),
+  home: document.querySelector('#home'),
   watchedLibrary: document.querySelector('.js-btn_watched'),
   queueLibrary: document.querySelector('.js-btn_queue'),
   aboutTeam: document.querySelector('.js-link-footer'),
@@ -14,11 +15,6 @@ export const refs = {
   modal: document.querySelector('.js-modal'),
   searchForm: document.querySelector('.js-search-form'),
   cardContainer: document.querySelector('.card-container'),
-
-  switchLangCheckbox: document.querySelector('.switch-lang'),
-  wrapperLangCheckbox: document.querySelector('.wrapper-lang-checkbox'),
-  signLangEng: document.querySelector('.sign-eng'),
-  signLangRus: document.querySelector('.sign-rus'),
 
   header: document.querySelector('.js-header'),
   headerButtons: document.querySelector('.js-buttons'),

@@ -1,11 +1,11 @@
 import { renderMovieList } from './renderFromLocalStorage';
-import FetchAPI from './fetchAPI';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs';
 import { renderSearchResult, renderTrending } from './renderGallery.js';
 import { spinnerMethod } from './spinner';
 const debounce = require('lodash.debounce');
 
-const fetch = new FetchAPI();
+// const fetch = new FetchAPI();
 let page = 1;
 let previousPage = refs.movieGallerySection.dataset.page;
 
@@ -23,19 +23,19 @@ async function onRender(entries) {
       page += 1;
       switch (refs.movieGallerySection.dataset.page) {
         case 'trending':
-          renderTrending(page)
+          renderTrending(page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'searching':
-          renderSearchResult(query, page)
+          renderSearchResult(query, page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'watched':
-          renderMovieList(refs.movieGallerySection.dataset.page, page)
+          renderMovieList(refs.movieGallerySection.dataset.page, page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
         case 'queue':
-          renderMovieList(refs.movieGallerySection.dataset.page, page)
+          renderMovieList(refs.movieGallerySection.dataset.page, page);
           previousPage = refs.movieGallerySection.dataset.page;
           break;
 
@@ -43,8 +43,7 @@ async function onRender(entries) {
           break;
       }
       spinnerMethod.removeSpinner();
-    }
-    else {
+    } else {
       spinnerMethod.removeSpinner();
       return;
     }

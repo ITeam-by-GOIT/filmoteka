@@ -1,24 +1,26 @@
 import movieCardTemplate from '../templates/movieCardTemplate.hbs';
-import Fetch from './fetchAPI';
+import fetchAPI from './fetchAPI.js';
 import { refs } from './refs';
 import { newToastr } from './toastrOptions.js';
 import { spinnerMethod } from './spinner';
 
-const fetch = new Fetch();
+// const fetch = new Fetch();
 
-document.addEventListener('DOMContentLoaded', () => { renderTrending(1) });
+document.addEventListener('DOMContentLoaded', () => {
+  renderTrending(1);
+});
 
 async function renderTrending(page) {
   refs.movieGallerySection.dataset.page = 'trending';
   try {
-    const trends = await fetch.searchByTrending(undefined, page).then(data => {
+    const trends = await fetchAPI.searchByTrending(undefined, page).then(data => {
       return data.results;
     });
     if (page > trends.total_pages) {
       spinnerMethod.removeSpinner();
       return;
     }
-    render(trends)
+    render(trends);
   } catch (e) {
     console.log('this is error:', e);
   }
@@ -29,10 +31,12 @@ async function renderSearchResult(query, page) {
     if (page === 1) {
       refs.galleryList.innerHTML = '';
     }
-    const data = await fetch.searchByInputQuery(query, page);
+    const data = await fetchAPI.searchByInputQuery(query, page);
+
     const results = data.results;
+
     if (results.length === 0) {
-      newToastr.error('Unsuccessful results. Try different query!')
+      newToastr.error('Unsuccessful results. Try different query!');
     }
     if (page > data.total_pages) {
       spinnerMethod.removeSpinner();
@@ -44,7 +48,7 @@ async function renderSearchResult(query, page) {
   }
 }
 async function render(data) {
-  const genres = await fetch.getGenres().then(list => {
+  const genres = await fetchAPI.getGenres().then(list => {
     return list.genres;
   });
   const result = await renderGalleryMarkup(data, genres);
