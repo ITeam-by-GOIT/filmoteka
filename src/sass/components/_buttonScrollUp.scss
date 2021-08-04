@@ -1,26 +1,29 @@
 .buttonScrollUp {
   position: fixed;
   font-size: 35px;
-  bottom: 80px;
+  bottom: 40px;
   right: 40px;
-  z-index: 9999;
-  width: 35px;
-  height: 35px;
+  z-index: 3;
+  width: 45px;
+  height: 45px;
   text-align: center;
   line-height: 30px;
   color: var(--secondary-active-color);
   cursor: pointer;
+  background-color: var(--main-white-color);
   border-radius: 50%;
   display: none;
 }
 
 .buttonScrollUp:hover {
   color: var(--main-white-color);
-  background: var(--secondary-active-color);
+  background-color: var(--secondary-active-color);
 }
 
 .buttonScrollUp--show {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .test {
