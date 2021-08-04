@@ -21,12 +21,9 @@
   margin-bottom: 10px;
 }
 .team-list-item {
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 0px 0px 4px 4px;
-  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
   margin: 15px;
-  // height: 250px;
 }
 .image-wrapper {
   border-radius: 50%;
@@ -65,7 +62,7 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  color: #afb1b8;
+  color: var(--footer-text-color);
   transition: background-color ease 250ms, color ease 250ms;
 }
 .social-list-link:hover,
@@ -75,4 +72,52 @@
 }
 .social-list-icon {
   fill: currentColor;
+}
+.a-box {
+  display: inline-block;
+  width: 100%;
+  max-width: 240px;
+  text-align: center;
+}
+
+.img-container {
+  height: 230px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 0px 0px 20px 20px;
+  display: inline-block;
+  transition: transform ease 500ms;
+  &:hover,
+  &focus {
+    transform: scale(1.1);
+  }
+}
+
+.inner-skew {
+  display: inline-block;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0px;
+  // transform: skew(0deg, 13deg);
+  font-size: 0px;
+  margin: 30px 0px 0px 0px;
+  background: #c8c2c2;
+  height: 250px;
+  width: 200px;
+}
+
+.text-container {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 120px 20px 20px 20px;
+  border-radius: 20px;
+  background: #fff;
+  margin: -120px 0px 0px 0px;
+  line-height: 19px;
+  font-size: 14px;
+}
+
+.text-container h3 {
+  margin: 20px 0px 10px 0px;
+  color: var(--main-active-color);
+  font-size: 18px;
 }
