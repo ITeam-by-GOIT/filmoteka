@@ -96,8 +96,6 @@
   position: absolute;
   top: 50%;
   transition: 0.3s;
-  /* -moz-box-sizing: border-box; */
-  /* -webkit-box-sizing: border-box; */
   box-sizing: border-box;
 }
 .checkbox span:before {
@@ -114,7 +112,7 @@
   margin-top: -7px;
   height: 13px;
   width: 31px;
-  background: #414040;
+  background: rgba(196, 176, 167, 0.932);
   border-radius: 5%;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 }
